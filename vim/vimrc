@@ -102,6 +102,7 @@ call plug#begin()
   Plug 'junegunn/limelight.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'ntpeters/vim-better-whitespace'
+  Plug 'hsanson/vim-android'
 call plug#end()
 
 " Gruvbox
