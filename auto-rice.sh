@@ -112,7 +112,6 @@ install_pkg network-manager-applet
 # gtk/icon
 install_pkg lxappearance
 install_pkg materia-gtk-theme
-install_pkg breeze-gtk
 install_pkg papirus-icon-theme
 
 # thunar
