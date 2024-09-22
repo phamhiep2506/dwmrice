@@ -49,28 +49,9 @@ rm_config $HOME/.config/alacritty
 cp_config $PWD/alacritty $HOME/.config
 
 # picom
-# install_pkg picom
-# rm_config $HOME/.config/picom
-# cp_config $PWD/picom $HOME/.config
-
-# picom animation
-read -p "Do you want to install picom animation? (y/n) " yn
-case $yn in
-  y)
-    # depends
-    install_pkg "libgl libev pcre libx11 xcb-util-renderutil libxcb xcb-util-image libxext pixman libconfig libdbus hicolor-icon-theme"
-    # makedepends
-    install_pkg "mesa meson asciidoc uthash xorgproto"
-    # build
-    sudo rm -rfv /opt/picom
-    sudo git clone --depth=1 https://github.com/fdev31/picom /opt/picom
-    (cd /opt/picom; sudo git submodule update --init --recursive; sudo meson setup --buildtype=release . build; sudo ninja -C build install)
-    rm_config $HOME/.config/picom
-    cp_config $PWD/picom $HOME/.config
-    ;;
-  n)
-    ;;
-esac
+install_pkg picom
+rm_config $HOME/.config/picom
+cp_config $PWD/picom $HOME/.config
 
 # polybar
 install_pkg polybar
