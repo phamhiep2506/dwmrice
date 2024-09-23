@@ -89,6 +89,8 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'preservim/nerdtree'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -122,6 +124,10 @@ function! s:custom_gruvbox_material_colors()
 endfunction
 autocmd! ColorScheme gruvbox-material call s:custom_gruvbox_material_colors()
 colorscheme gruvbox-material
+
+" Airline
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ""
 
 " Nerdtree
 let NERDTreeMinimalUI = 1
