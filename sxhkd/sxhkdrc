@@ -7,14 +7,8 @@ super + shift + Return
 	alacritty
 
 # launcher
-super + p
+super + @space
 	rofi -show drun
-
-super + shift + p
-	rofi -show run
-
-super + Tab
-	rofi -show window
 
 # reload sxhkd
 super + Escape
@@ -47,10 +41,6 @@ super + shift + q
 super + shift + r
 	bspc wm --restart
 
-# kill window
-super + shift + x
-	bspc node --kill
-
 # close window
 super + shift + c
   bspc node --close
@@ -67,7 +57,7 @@ super + t
 super + f
 	bspc node --state floating
 
-# set window floating
+# set window fullscreen
 super + shift + f
 	bspc node --state fullscreen
 
@@ -88,12 +78,8 @@ super + shift + {h,j,k,l}
 	bspc node --swap {west,south,north,east}
 
 # focus last node
-alt + Tab
+super + Tab
 	bspc node --focus last
-
-# focus next desktop
-# super + Tab
-# 	bspc desktop --focus next.occupied
 
 # focus desktop
 super + {1-9}
@@ -124,9 +110,9 @@ super + r
 #
 
 # resize window
-super + alt + {h,j,k,l}
+super + {Left,Down,Up,Right}
 	bspc node --resize {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # move floating window
-super + {Left,Down,Up,Right}
+super + alt + {h,j,k,l}
 	bspc node --move {-20 0,0 20,0 -20,20 0}
