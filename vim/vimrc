@@ -126,8 +126,13 @@ autocmd! ColorScheme gruvbox-material call s:custom_gruvbox_material_colors()
 colorscheme gruvbox-material
 
 " Airline
-let g:airline_symbols = {}
+if !exists("g:airline_symbols")
+  let g:airline_symbols = {}
+endif
 let g:airline_symbols.branch = ""
+let g:airline_symbols.colnr = ":"
+let g:airline_symbols.whitespace = ""
+let g:airline_symbols.maxlinenr = ""
 
 " Nerdtree
 let NERDTreeMinimalUI = 1
