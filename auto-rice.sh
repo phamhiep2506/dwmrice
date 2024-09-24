@@ -126,6 +126,7 @@ rm -rf Bibata-Modern-Classic.tar.xz
 
 # thunar
 install_pkg thunar
+install_pkg gvfs
 install_pkg thunar-archive-plugin
 install_pkg thunar-volman
 
