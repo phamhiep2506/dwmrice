@@ -114,6 +114,16 @@ install_pkg lxappearance
 install_pkg materia-gtk-theme
 install_pkg papirus-icon-theme
 
+# cursor
+install_pkg wget
+wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz
+sudo tar xvf Bibata-Modern-Classic.tar.xz -C /usr/share/icons
+sudo tee /usr/share/icons/default/index.theme << EOF
+[Icon Theme]
+Inherits=Bibata-Modern-Classic
+EOF
+rm -rf Bibata-Modern-Classic.tar.xz
+
 # thunar
 install_pkg thunar
 install_pkg thunar-archive-plugin
