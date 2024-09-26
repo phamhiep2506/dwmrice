@@ -24,8 +24,8 @@ SAVEHIST=2000
 export EDITOR='vim'
 export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
-export JAVA_HOME=/opt/jdk17
-export PATH=/opt/jdk17/bin:$PATH
+export JAVA_HOME=/opt/jdk21
+export PATH=/opt/jdk21/bin:$PATH
 export PATH=/opt/node/bin:$PATH
 export PATH=/opt/docker:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
@@ -33,6 +33,7 @@ export PATH=$HOME/.python/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 alias ls='ls --color=auto'
+alias vim='nvim'
 
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
