@@ -172,7 +172,7 @@ EOF
 sudo systemctl enable slock@$USER.service
 
 # vim
-install_pkg vim
+install_pkg gvim
 install_pkg ripgrep
 cp_config $PWD/vim/vimrc $HOME/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
