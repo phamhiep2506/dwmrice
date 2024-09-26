@@ -2,9 +2,6 @@
 set number
 set relativenumber
 set mouse=a
-if exists("$TMUX")
-  set ttymouse=xterm2 " Fix mouse tmux
-endif
 set wrap
 set cursorline
 set clipboard=
@@ -29,21 +26,7 @@ set autoindent
 set expandtab
 
 " Undo
-if !isdirectory($HOME."/.vim")
-  call mkdir($HOME."/.vim", "", 0770)
-endif
-if !isdirectory($HOME."/.vim/undo")
-  call mkdir($HOME."/.vim/undo", "", 0700)
-endif
-set undodir=~/.vim/undo
 set undofile
-
-" Gvim
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-set guifont=JetBrains\ Mono\ 12
 
 " Map leader <Space>
 let mapleader=" "
@@ -119,6 +102,7 @@ let g:gruvbox_material_diagnostic_line_highlight = 1
 let g:gruvbox_material_better_performance = 1
 function! s:custom_gruvbox_material_colors()
   hi Normal ctermbg=0 guibg=#000000
+  hi NormalNC ctermbg=0 guibg=#000000
   hi CursorLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
   hi CursorLineNR ctermfg=14 ctermbg=NONE guifg=#d79921 guibg=NONE cterm=bold gui=bold
 endfunction

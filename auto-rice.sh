@@ -171,12 +171,14 @@ WantedBy=sleep.target
 EOF
 sudo systemctl enable slock@$USER.service
 
-# vim
-install_pkg gvim
+# neovim
+install_pkg neovim
 install_pkg ripgrep
-cp_config $PWD/vim/vimrc $HOME/.vimrc
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p $HOME/.config/nvim
+rm_config $HOME/.config/nvim/init.vim
+cp_config $PWD/nvim/init.vim $HOME/.config/nvim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # xbanish
 read -p "Do you want to install xbanish? (y/n) " yn
