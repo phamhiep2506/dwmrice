@@ -2,7 +2,7 @@
 
 # install packages
 install_pkg() {
-  sudo pacman -S $1 --noconfirm 
+  sudo pacman -S $1 --noconfirm
 }
 
 # remove config
@@ -88,6 +88,8 @@ install_pkg neovim
 install_pkg ripgrep
 rm_config $HOME/.config/nvim
 ln_config $PWD/nvim $HOME/.config
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # wlsunset
 install_pkg wlsunset

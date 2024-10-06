@@ -21,7 +21,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=2000
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
 export JAVA_HOME=/opt/jdk21
