@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "BufEnter" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
+vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
     vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#000000" })

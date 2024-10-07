@@ -15,6 +15,7 @@ opt.writebackup = false
 opt.swapfile = false
 opt.updatetime = 300
 opt.hidden = true
+opt.laststatus = 3
 
 -- Search
 opt.hlsearch = true
