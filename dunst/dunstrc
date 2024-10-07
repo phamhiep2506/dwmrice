@@ -1,7 +1,7 @@
 [global]
   frame_width = 2
   font = JetBrains Mono 9
-  offset = 20x30
+  offset = 20x20
   corner_radius = 10
   gap_size = 5
   icon_theme = Papirus
