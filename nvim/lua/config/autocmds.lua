@@ -1,3 +1,4 @@
+-- ColorScheme
 vim.api.nvim_create_autocmd({ "ColorScheme", "BufEnter" }, {
   pattern = "*",
   callback = function()
@@ -8,6 +9,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "BufEnter" }, {
   end,
 })
 
+-- NeoTree
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
@@ -17,6 +19,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+-- Comform
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
