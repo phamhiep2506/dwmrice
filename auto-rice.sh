@@ -32,8 +32,20 @@ install_pkg hyprland
 install_pkg hyprpaper
 install_pkg hyprlock
 install_pkg hypridle
+install_pkg xdg-desktop-portal-hyprland
 rm_config $HOME/.config/hypr
 ln_config $PWD/hypr $HOME/.config
+
+# fix env
+sudo tee /etc/environment << EOF
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+XDG_CURRENT_DESKTOP=Hyprland
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_DESKTOP=Hyprland
+EOF
 
 # font
 install_pkg ttf-dejavu
@@ -95,9 +107,6 @@ install_pkg wlsunset
 # nm-applet
 install_pkg network-manager-applet
 
-# flameshot
-install_pkg flameshot
-
 # xclip
 install_pkg xclip
 
@@ -105,11 +114,6 @@ install_pkg xclip
 install_pkg fcitx5
 install_pkg fcitx5-im
 install_pkg fcitx5-unikey
-sudo tee /etc/environment << EOF
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-EOF
 
 # gtk/icon
 install_pkg materia-gtk-theme
