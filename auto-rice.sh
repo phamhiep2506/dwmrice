@@ -108,7 +108,7 @@ install_pkg wlsunset
 install_pkg network-manager-applet
 
 # xclip
-install_pkg xclip
+install_pkg wl-clipboard
 
 # fcitx5
 install_pkg fcitx5
@@ -147,6 +147,10 @@ install_pkg mpv
 
 # viewnior
 install_pkg viewnior
+
+# screenshot
+install_pkg slurp
+install_pkg grim
 
 # ly
 install_pkg ly
