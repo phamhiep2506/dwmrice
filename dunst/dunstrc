@@ -1,0 +1,27 @@
+[global]
+  frame_width = 2
+  font = JetBrains Mono 9
+  offset = 20x30
+  corner_radius = 10
+  gap_size = 5
+  icon_theme = Papirus
+  enable_recursive_icon_lookup = true
+  icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps
+
+[urgency_low]
+  background = "#000000"
+  foreground = "#dbebb2"
+  frame_color = "#d79921"
+  highlight = "#d79921"
+
+[urgency_normal]
+  background = "#000000"
+  foreground = "#dbebb2"
+  frame_color = "#d79921"
+  highlight = "#d79921"
+
+[urgency_critical]
+  background = "#000000"
+  foreground = "#dbebb2"
+  frame_color = "#cc241d"
+  highlight = "#d79921"

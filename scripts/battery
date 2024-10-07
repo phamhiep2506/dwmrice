@@ -1,0 +1,79 @@
+#!/usr/bin/env sh
+
+power="BAT0"
+battery_discharging="Discharging"
+battery_charging="Charging"
+battery_filling="Full"
+battery_low=15
+battery_full=95
+notify_status=0
+
+get_battery_status() {
+  echo -n `cat /sys/class/power_supply/$power/status`
+}
+
+get_battery_capacity() {
+  echo -n `cat /sys/class/power_supply/$power/capacity`
+}
+
+get_icon() {
+	battery_capacity=$(get_battery_capacity)
+  battery_status=$(get_battery_status)
+
+  if [[ ($battery_capacity -le $battery_low) &&
+        ($battery_status == $battery_discharging) ]]
+  then
+    echo "battery-low"
+    return
+  elif [[ ($battery_capacity -ge $battery_full) &&
+          ($battery_status == $battery_charging) ]]
+  then
+    echo "battery-full"
+    return
+  elif [[ ($battery_status == $battery_charging) ]]
+  then
+    echo "battery-charged"
+    return
+	fi
+}
+
+notify_cmd() {
+  title="Battery"
+  message=$1
+  icon=$(get_icon)
+  id=0x25
+  status=$2
+
+  dunstify --urgency $status $title $message --icon=$icon --replace=$id
+}
+
+while true; do
+  battery_capacity=`echo -n $(cat /sys/class/power_supply/$power/capacity)`
+  battery_status=`echo -n $(cat /sys/class/power_supply/$power/status)`
+
+  if [[ $battery_status == $battery_discharging ]] &&
+     [[ $battery_capacity -le battery_low ]] &&
+     [[ notify_status -eq 0 ]]
+  then
+    notify_status=1
+    notify_cmd "Low" "critical"
+    paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga
+  elif [[ $battery_status == $battery_charging ]] &&
+       [[ $notify_status -eq 0 ]]
+  then
+    notify_status=1
+    notify_cmd "Charging" "normal"
+    paplay /usr/share/sounds/freedesktop/stereo/power-plug.oga
+  elif [[ $battery_status == $battery_filling ]] &&
+       [[ $notify_status -eq 0 ]]
+  then
+    notify_status=1
+    notify_cmd "Fulling" "normal"
+    paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+  elif [[ $battery_status == $battery_discharging ]]
+  then
+    notify_status=0
+  fi
+
+  sleep 1
+done

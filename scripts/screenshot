@@ -1,0 +1,48 @@
+#!/usr/bin/env sh
+
+mkdir -p $HOME/Screenshots
+
+help() {
+  echo "Usage: ./screenshot [OPTION]"
+  echo -e "--full\t\tFull screen"
+  echo -e "--select\tSelect screen"
+}
+
+file_name() {
+  echo -n screenshot_$(date +"%d_%m_%Y_%H%M%S").png
+}
+
+get_icon() {
+  echo -n "gnome-screenshot"
+}
+
+notify_cmd() {
+  title="Screenshot"
+  icon=$(get_icon)
+
+  dunstify --urgency normal $title "Save image to $(file_name)" --icon=$icon
+}
+
+screenshot_full() {
+  grim $HOME/Screenshots/$(file_name)
+}
+
+screenshot_select() {
+  slurp | grim $HOME/Screenshots/$(file_name)
+}
+
+if [[ $# -ne 1 ]]; then
+  help
+  exit 1
+fi
+
+if [[ "$1" == "--full" ]]; then
+  screenshot_full
+  notify_cmd
+elif [[ "$1" == "--select" ]]; then
+  screenshot_select
+  notify_cmd
+else
+  help
+  exit 1
+fi

@@ -101,6 +101,11 @@ install_pkg ripgrep
 rm_config $HOME/.config/nvim
 ln_config $PWD/nvim $HOME/.config
 
+# dunst
+install_pkg dunst
+rm_config $HOME/.config/dunst
+ln_config $PWD/dunst $HOME/.config
+
 # wlsunset
 install_pkg wlsunset
 
@@ -141,6 +146,7 @@ install_pkg ranger
 
 # volume
 install_pkg pavucontrol
+install_pkg pamixer
 
 # mpv
 install_pkg mpv
