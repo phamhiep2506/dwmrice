@@ -16,7 +16,6 @@ autocmd("ColorScheme", {
 autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    hl(0, "NormalFloat", { bg = "#000000" })
     hl(0, "FloatBorder", { bg = "#000000" })
   end,
 })
@@ -31,6 +30,15 @@ autocmd("BufEnter", {
   end,
 })
 
+-- Trouble
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    hl(0, "TroubleNormal", { bg = "#000000" })
+    hl(0, "TroubleNormalNC", { bg = "#000000" })
+  end,
+})
+
 -- Lsp
 autocmd("LspAttach", {
   callback = function(args)
@@ -38,6 +46,8 @@ autocmd("LspAttach", {
     local map = vim.keymap.set
     local lsp = vim.lsp.buf
 
+    map("n", "]d", vim.diagnostic.goto_next, opts)
+    map("n", "[d", vim.diagnostic.goto_prev, opts)
     map("n", "gd", lsp.definition, opts)
     map("n", "gi", lsp.implementation, opts)
     map("n", "gr", lsp.references, opts)
