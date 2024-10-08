@@ -60,9 +60,6 @@ install_pkg wget
 # curl
 install_pkg curl
 
-# backlight
-install_pkg brightnessctl
-
 # browser
 read -p "Install Brave Browser? (y/n) " yn
 case $yn in
