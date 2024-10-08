@@ -25,6 +25,7 @@ export EDITOR='nvim'
 export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
 export JAVA_HOME=/opt/jdk21
+export PATH=$HOME/.local/bin:$PATH
 export PATH=/opt/jdk21/bin:$PATH
 export PATH=/opt/node/bin:$PATH
 export PATH=/opt/docker:$PATH
