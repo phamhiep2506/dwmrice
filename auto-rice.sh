@@ -103,6 +103,12 @@ install_pkg dunst
 rm_config $HOME/.config/dunst
 ln_config $PWD/dunst $HOME/.config
 
+# ranger
+install_pkg ranger
+install_pkg python-pillow
+rm_config $HOME/.config/ranger
+ln_config $PWD/ranger $HOME/.config
+
 # wlsunset
 install_pkg wlsunset
 
@@ -137,9 +143,6 @@ install_pkg thunar
 install_pkg gvfs
 install_pkg thunar-archive-plugin
 install_pkg thunar-volman
-
-# ranger
-install_pkg ranger
 
 # volume
 install_pkg pavucontrol
