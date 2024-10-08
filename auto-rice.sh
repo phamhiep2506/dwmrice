@@ -158,10 +158,6 @@ install_pkg viewnior
 install_pkg slurp
 install_pkg grim
 
-# ly
-install_pkg ly
-sudo systemctl enable ly.service
-
 # zsh
 install_pkg zsh
 mkdir -p $HOME/.zsh/plugins
