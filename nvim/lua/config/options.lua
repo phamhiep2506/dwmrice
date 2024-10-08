@@ -2,7 +2,6 @@ local o = vim.opt
 local g = vim.g
 
 -- Base
-o.autowrite = true
 o.number = true
 o.relativenumber = true
 o.mouse = "a"

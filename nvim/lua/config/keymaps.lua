@@ -1,33 +1,33 @@
 local map = vim.keymap.set
 
 -- Navigation
-map("n", "<C-h>", "<C-w>h", { silent = true })
-map("n", "<C-j>", "<C-w>j", { silent = true })
-map("n", "<C-k>", "<C-w>k", { silent = true })
-map("n", "<C-l>", "<C-w>l", { silent = true })
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- Jump center screen
-map("n", "j", "jzz", { silent = true })
-map("n", "k", "kzz", { silent = true })
-map("n", "J", "5jzz", { silent = true })
-map("n", "K", "5kzz", { silent = true })
+map("n", "j", "jzz")
+map("n", "k", "kzz")
+map("n", "J", "5jzz")
+map("n", "K", "5kzz")
 
 -- Next & Previous highlight search
-map("n", "n", "nzz", { silent = true })
-map("n", "N", "Nzz", { silent = true })
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
 
 -- Indent block
-map("v", ">", ">gv", { silent = true })
-map("v", "<", "<gv", { silent = true })
+map("v", ">", ">gv")
+map("v", "<", "<gv")
 
 -- Split window
-map("n", "<leader>_", "<CMD>split<CR>", { silent = true })
-map("n", "<leader>|", "<CMD>vsplit<CR>", { silent = true })
+map("n", "<leader>_", "<CMD>split<CR>")
+map("n", "<leader>|", "<CMD>vsplit<CR>")
 
 -- Copy & Paste
-map("n", "<leader>p", '"+p', { silent = true })
-map("v", "<leader>p", '"+p', { silent = true })
-map("v", "<leader>y", '"+y', { silent = true })
+map("n", "<leader>p", '"+p')
+map("v", "<leader>p", '"+p')
+map("v", "<leader>y", '"+y')
 
 -- Disable highlight search
-map("n", "<leader><Enter>", "<CMD>nohlsearch<CR>", { silent = true })
+map("n", "<leader><Enter>", "<CMD>nohlsearch<CR>")

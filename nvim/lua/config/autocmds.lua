@@ -12,14 +12,6 @@ autocmd("ColorScheme", {
   end,
 })
 
--- Float
-autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    hl(0, "FloatBorder", { bg = "#000000" })
-  end,
-})
-
 -- NeoTree
 autocmd("BufEnter", {
   pattern = "*",
@@ -54,6 +46,8 @@ autocmd("LspAttach", {
     map("n", "<leader>sh", lsp.signature_help, opts)
     map("n", "<leader>ca", lsp.code_action, opts)
     map("n", "<leader>h", lsp.hover, opts)
-    map("n", "<leader>fm", lsp.format, opts)
+    map("n", "<leader>fm", function()
+      require("conform").format({ bufnr = args.buf })
+    end, opts)
   end,
 })
