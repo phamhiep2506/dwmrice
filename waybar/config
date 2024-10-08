@@ -38,7 +38,7 @@
     },
 
     "network": {
-        "format": "NET {bandwidthUpBits} {bandwidthDownBits}",
+        "format": " {bandwidthUpBits}  {bandwidthDownBits}",
         "interval": 1,
     },
 
