@@ -9,24 +9,24 @@ battery_full=95
 notify_status=0
 
 get_battery_status() {
-  echo -n `cat /sys/class/power_supply/$power/status`
+  echo -n $(cat /sys/class/power_supply/$power/status)
 }
 
 get_battery_capacity() {
-  echo -n `cat /sys/class/power_supply/$power/capacity`
+  echo -n $(cat /sys/class/power_supply/$power/capacity)
 }
 
 get_icon() {
-	battery_capacity=$(get_battery_capacity)
+  battery_capacity=$(get_battery_capacity)
   battery_status=$(get_battery_status)
 
   if [[ ($battery_capacity -le $battery_low) &&
-        ($battery_status == $battery_discharging) ]]
+    ($battery_status == $battery_discharging) ]]
   then
     echo "battery-low"
     return
   elif [[ ($battery_capacity -ge $battery_full) &&
-          ($battery_status == $battery_charging) ]]
+    ($battery_status == $battery_charging) ]]
   then
     echo "battery-full"
     return
@@ -34,7 +34,7 @@ get_icon() {
   then
     echo "battery-charged"
     return
-	fi
+  fi
 }
 
 notify_cmd() {
@@ -48,8 +48,8 @@ notify_cmd() {
 }
 
 while true; do
-  battery_capacity=`echo -n $(cat /sys/class/power_supply/$power/capacity)`
-  battery_status=`echo -n $(cat /sys/class/power_supply/$power/status)`
+  battery_capacity=$(echo -n $(cat /sys/class/power_supply/$power/capacity))
+  battery_status=$(echo -n $(cat /sys/class/power_supply/$power/status))
 
   if [[ $battery_status == $battery_discharging ]] &&
      [[ $battery_capacity -le battery_low ]] &&

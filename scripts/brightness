@@ -4,8 +4,12 @@ get_backlight() {
   echo -n $(brightnessctl get)
 }
 
+get_backlight_max() {
+  echo -n $(brightnessctl max)
+}
+
 percent_backlight() {
-  echo -n $(expr $(get_backlight) / 10)
+  echo -n $(($(($(get_backlight) * 100)) / $(get_backlight_max)))
 }
 
 get_icon() {
@@ -31,12 +35,12 @@ notify_cmd() {
 }
 
 inc_backlight() {
-  brightnessctl set `expr $(get_backlight) + 50`
+  brightnessctl set $(($(get_backlight) + 50))
   paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
 }
 
 dec_backlight() {
-  brightnessctl set `expr $(get_backlight) - 50`
+  brightnessctl set $(($(get_backlight) - 50))
   paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
 }
 

@@ -148,6 +148,9 @@ install_pkg ranger
 install_pkg pavucontrol
 install_pkg pamixer
 
+# backlight
+install_pkg brightnessctl
+
 # mpv
 install_pkg mpv
 
