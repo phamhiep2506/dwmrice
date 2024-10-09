@@ -60,18 +60,6 @@ install_pkg wget
 # curl
 install_pkg curl
 
-# browser
-read -p "Install Brave Browser? (y/n) " yn
-case $yn in
-  y)
-    git clone https://aur.archlinux.org/brave-bin.git --depth 1
-    (cd $PWD/brave-bin && makepkg -si)
-    rm_config $PWD/brave-bin
-    ;;
-  n)
-    ;;
-esac
-
 # wofi
 install_pkg wofi
 rm_config $HOME/.config/wofi
