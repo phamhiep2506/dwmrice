@@ -21,6 +21,12 @@ sudo pacman -Syu --noconfirm
 # git
 install_pkg git
 
+# wget
+install_pkg wget
+
+# curl
+install_pkg curl
+
 # add user to a group
 sudo usermod -a -G video $USER
 
@@ -35,6 +41,11 @@ install_pkg hypridle
 install_pkg xdg-desktop-portal-hyprland
 rm_config $HOME/.config/hypr
 ln_config $PWD/hypr $HOME/.config
+
+# fcitx5
+install_pkg fcitx5
+install_pkg fcitx5-im
+install_pkg fcitx5-unikey
 
 # fix env
 sudo tee /etc/environment << EOF
@@ -53,12 +64,6 @@ install_pkg ttf-jetbrains-mono
 install_pkg ttf-jetbrains-mono-nerd
 install_pkg noto-fonts-cjk
 install_pkg noto-fonts-emoji
-
-# wget
-install_pkg wget
-
-# curl
-install_pkg curl
 
 # wofi
 install_pkg wofi
@@ -96,6 +101,7 @@ install_pkg ranger
 install_pkg python-pillow
 rm_config $HOME/.config/ranger
 ln_config $PWD/ranger $HOME/.config
+git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
 # wlsunset
 install_pkg wlsunset
@@ -103,13 +109,8 @@ install_pkg wlsunset
 # nm-applet
 install_pkg network-manager-applet
 
-# xclip
+# clipboard
 install_pkg wl-clipboard
-
-# fcitx5
-install_pkg fcitx5
-install_pkg fcitx5-im
-install_pkg fcitx5-unikey
 
 # gtk/icon
 install_pkg materia-gtk-theme
@@ -125,12 +126,6 @@ sudo tee /usr/share/icons/default/index.theme << EOF
 Inherits=Bibata-Modern-Classic
 EOF
 rm -rf Bibata-Modern-Classic.tar.xz
-
-# thunar
-install_pkg thunar
-install_pkg gvfs
-install_pkg thunar-archive-plugin
-install_pkg thunar-volman
 
 # volume
 install_pkg pavucontrol
