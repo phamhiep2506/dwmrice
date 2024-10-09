@@ -101,6 +101,7 @@ install_pkg ranger
 install_pkg python-pillow
 rm_config $HOME/.config/ranger
 ln_config $PWD/ranger $HOME/.config
+rm_config $HOME/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
 # wlsunset
