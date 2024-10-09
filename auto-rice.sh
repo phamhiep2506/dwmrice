@@ -118,6 +118,10 @@ install_pkg materia-gtk-theme
 install_pkg papirus-icon-theme
 gsettings set org.gnome.desktop.interface gtk-theme Materia-dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+tee $HOME/.gtkrc-2.0 << EOF
+gtk-theme-name="Materia-dark"
+gtk-icon-theme-name="Papirus-Dark"
+EOF
 
 # cursor
 wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz
