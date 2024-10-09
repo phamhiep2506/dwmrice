@@ -1,5 +1,14 @@
 # Dotfiles (Hyprland)
 
+## Auto rice
+
+```bash
+git clone https://gitlab.com/phiepdev/dotfiles
+cd dotfiles
+git checkout <branch>
+./auto-rice.sh
+```
+
 ## Brave browser
 
 - Install [brave-bin](https://aur.archlinux.org/packages/brave-bin)
