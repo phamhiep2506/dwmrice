@@ -11,6 +11,7 @@ return {
         follow_current_file = { enabled = true },
       },
       enable_diagnostics = false,
+      popup_border_style = "rounded",
     })
 
     local map = vim.keymap.set

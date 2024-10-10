@@ -119,9 +119,15 @@ return {
       icons_enabled = true,
     })
 
-    ins_right({ "progress" })
+    ins_right({
+      "progress",
+      color = { gui = "bold" },
+    })
 
-    ins_right({ "location" })
+    ins_right({
+      "location",
+      color = { gui = "bold" },
+    })
 
     ins_right({
       function()

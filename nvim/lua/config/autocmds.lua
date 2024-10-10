@@ -12,6 +12,15 @@ autocmd("ColorScheme", {
   end,
 })
 
+-- Float
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    hl(0, "NormalFloat", { bg = "#000000" })
+    hl(0, "FloatBorder", { bg = "#000000" })
+  end,
+})
+
 -- NeoTree
 autocmd("BufEnter", {
   pattern = "*",
@@ -19,6 +28,7 @@ autocmd("BufEnter", {
     hl(0, "NeoTreeNormal", { bg = "#000000" })
     hl(0, "NeoTreeNormalNC", { bg = "#000000" })
     hl(0, "NeoTreeEndOfBuffer", { bg = "#000000" })
+    hl(0, "NeoTreeFloatTitle", { bg = "#000000" })
   end,
 })
 

@@ -11,7 +11,14 @@ return {
     local vscode = require("dap.ext.vscode")
     local json = require("plenary.json")
 
-    dapui.setup()
+    dapui.setup({
+      controls = {
+        enabled = false,
+      },
+      floating = {
+        border = "rounded",
+      },
+    })
 
     -- Auto open & close dapui
     dap.listeners.before.attach.dapui_config = function()
