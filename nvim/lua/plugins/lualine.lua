@@ -10,7 +10,6 @@ return {
       red = "#fb4934",
       green = "#b8bb26",
       blue = "#83a598",
-      yellow = "#fabd2f",
     }
 
     local config = {
@@ -61,15 +60,7 @@ return {
       function()
         return ""
       end,
-      color = function()
-        local mode_color = {
-          n = colors.red,
-          i = colors.green,
-          v = colors.blue,
-          V = colors.yellow,
-        }
-        return { fg = mode_color[fn.mode()] }
-      end,
+      color = { fg = colors.red },
       padding = { left = 1, right = 1 },
     })
 
@@ -78,9 +69,7 @@ return {
       color = { gui = "bold" },
     })
 
-    ins_left({
-      "filesize",
-    })
+    ins_left({ "filesize" })
 
     ins_left({
       "branch",
@@ -91,7 +80,6 @@ return {
     ins_left({
       "diff",
       symbols = { added = " ", modified = " ", removed = " " },
-      colored = true,
     })
 
     ins_right({
@@ -122,7 +110,6 @@ return {
         hint = "󰌶 ",
         info = " ",
       },
-      colored = true,
     })
 
     ins_right({ "o:encoding" })
@@ -132,10 +119,7 @@ return {
       icons_enabled = true,
     })
 
-    ins_right({
-      "progress",
-      color = { gui = "bold" },
-    })
+    ins_right({ "progress" })
 
     ins_right({ "location" })
 
