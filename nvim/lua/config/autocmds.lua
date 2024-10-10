@@ -1,12 +1,13 @@
 local hl = vim.api.nvim_set_hl
 local autocmd = vim.api.nvim_create_autocmd
+local fn = vim.fn
 
 -- ColorScheme
 autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    hl(0, "Normal", { bg = "#000000" })
-    hl(0, "NormalNC", { bg = "#000000" })
+    hl(0, "Normal", { bg = "NONE" })
+    hl(0, "NormalNC", { bg = "NONE" })
     hl(0, "CursorLine", { fg = "NONE", bg = "NONE" })
     hl(0, "CursorLineNR", { fg = "#d79921", bg = "NONE", bold = true })
   end,
@@ -16,8 +17,8 @@ autocmd("ColorScheme", {
 autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    hl(0, "NormalFloat", { bg = "#000000" })
-    hl(0, "FloatBorder", { bg = "#000000" })
+    hl(0, "NormalFloat", { bg = "NONE" })
+    hl(0, "FloatBorder", { bg = "NONE" })
   end,
 })
 
@@ -25,10 +26,10 @@ autocmd("BufEnter", {
 autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    hl(0, "NeoTreeNormal", { bg = "#000000" })
-    hl(0, "NeoTreeNormalNC", { bg = "#000000" })
-    hl(0, "NeoTreeEndOfBuffer", { bg = "#000000" })
-    hl(0, "NeoTreeFloatTitle", { bg = "#000000" })
+    hl(0, "NeoTreeNormal", { bg = "NONE" })
+    hl(0, "NeoTreeNormalNC", { bg = "NONE" })
+    hl(0, "NeoTreeEndOfBuffer", { bg = "NONE" })
+    hl(0, "NeoTreeFloatTitle", { bg = "NONE" })
   end,
 })
 
@@ -36,8 +37,25 @@ autocmd("BufEnter", {
 autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    hl(0, "TroubleNormal", { bg = "#000000" })
-    hl(0, "TroubleNormalNC", { bg = "#000000" })
+    hl(0, "TroubleNormal", { bg = "NONE" })
+    hl(0, "TroubleNormalNC", { bg = "NONE" })
+  end,
+})
+
+-- Dap
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    hl(0, "DapBreakpoint", { fg = "#fb4934", bg = "NONE" })
+    hl(0, "DapStopped", { fg = "#b8bb26", bg = "NONE" })
+  end,
+})
+
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
+    fn.sign_define("DapStopped", { text = "", texthl = "DapStopped" })
   end,
 })
 
