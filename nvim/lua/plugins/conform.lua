@@ -2,6 +2,9 @@ return {
   "stevearc/conform.nvim",
   config = function()
     require("conform").setup({
+      default_format_opts = {
+        timeout_ms = "5000",
+      },
       formatters_by_ft = {
         lua = { "stylua" },
         c = { "clang-format" },
