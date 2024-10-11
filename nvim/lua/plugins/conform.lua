@@ -15,6 +15,7 @@ return {
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         python = { "black" },
+        kotlin = { "ktfmt" },
       },
     })
   end,
