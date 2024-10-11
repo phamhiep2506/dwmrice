@@ -4,7 +4,6 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
     "onsails/lspkind.nvim",
@@ -40,22 +39,6 @@ return {
       formatting = {
         format = lspkind.cmp_format(),
       },
-    })
-
-    cmp.setup.cmdline({ "/", "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "buffer" },
-      },
-    })
-
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = "path" },
-      }, {
-        { name = "cmdline" },
-      }),
     })
   end,
 }
