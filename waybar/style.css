@@ -7,7 +7,6 @@
     margin: 0px;
     padding: 0px;
     font-family: JetBrains Mono, JetBrainsMono Nerd Font;
-    font-size: 15px;
     font-weight: bold;
     min-height: 0px;
 }
@@ -22,6 +21,7 @@ window#waybar > box {
 
 #workspaces button {
     color: @fg;
+    font-size: 15px;
     padding: 0px 1px 0px 1px;
 }
 
@@ -34,6 +34,7 @@ window#waybar > box {
     margin: 0px 4px 0px 4px;
 }
 
+#waybar,
 #custom-separator,
 #network,
 #cpu,

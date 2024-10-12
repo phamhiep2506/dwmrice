@@ -1,7 +1,11 @@
 {
     "layer": "top",
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "hyprland/window",
+    ],
     "modules-right": [
         "network",
         "custom/separator",
@@ -35,6 +39,12 @@
         "persistent-workspaces": {
             "*": 9,
         },
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "icon": true,
+        "icon-size": 15,
     },
 
     "network": {
