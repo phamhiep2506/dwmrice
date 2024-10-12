@@ -43,6 +43,7 @@ rm_config $HOME/.config/hypr
 ln_config $PWD/hypr $HOME/.config
 
 # wallpaper & lockscreen
+install_pkg swww
 mkdir -p $HOME/.wallpaper
 mkdir -p $HOME/.lockscreen
 cp -av $HOME/dotfiles/images/default.png $HOME/.wallpaper
