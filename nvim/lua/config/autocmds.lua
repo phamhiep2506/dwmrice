@@ -59,6 +59,20 @@ autocmd("BufEnter", {
   end,
 })
 
+-- Indent scope
+autocmd("FileType", {
+  pattern = {
+    "help",
+    "lazy",
+    "mason",
+    "neo-tree",
+    "trouble",
+  },
+  callback = function()
+    vim.b.miniindentscope_disable = true
+  end,
+})
+
 -- Lsp
 autocmd("LspAttach", {
   callback = function(args)
