@@ -41,10 +41,12 @@ install_pkg hypridle
 install_pkg xdg-desktop-portal-hyprland
 rm_config $HOME/.config/hypr
 ln_config $PWD/hypr $HOME/.config
-tee $HOME/.config/hypr/hyprpaper.conf << EOF
-preload = $HOME/dotfiles/images/default.png
-wallpaper = ,$HOME/dotfiles/images/default.png
-EOF
+
+# wallpaper & lockscreen
+mkdir -p $HOME/.wallpaper
+mkdir -p $HOME/.lockscreen
+cp -av $HOME/dotfiles/images/default.png $HOME/.wallpaper
+cp -av $HOME/dotfiles/images/default.png $HOME/.lockscreen
 
 # fcitx5
 install_pkg fcitx5
