@@ -151,6 +151,7 @@ install_pkg grim
 
 # zsh
 install_pkg zsh
+install_pkg lsd
 mkdir -p $HOME/.zsh/plugins
 rm_config $HOME/.zsh/plugins/zsh-autosuggestions
 rm_config $HOME/.zsh/plugins/zsh-syntax-highlighting

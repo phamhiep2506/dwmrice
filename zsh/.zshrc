@@ -33,7 +33,7 @@ export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.python/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-alias ls='ls --color=auto'
+alias ls='lsd'
 alias vim='nvim'
 
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
