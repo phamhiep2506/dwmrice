@@ -42,8 +42,8 @@ install_pkg xdg-desktop-portal-hyprland
 rm_config $HOME/.config/hypr
 ln_config $PWD/hypr $HOME/.config
 tee $HOME/.config/hypr/hyprpaper.conf << EOF
-preload = $HOME/dotfiles/images/wallpaper/default.png
-wallpaper = ,$HOME/dotfiles/images/wallpaper/default.png
+preload = $HOME/dotfiles/images/default.png
+wallpaper = ,$HOME/dotfiles/images/default.png
 EOF
 
 # fcitx5
