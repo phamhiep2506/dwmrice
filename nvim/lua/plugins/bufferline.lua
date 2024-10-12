@@ -16,8 +16,8 @@ return {
     })
 
     local map = vim.keymap.set
-    map("n", "<A-.>", "<CMD>BufferLineCycleNext<CR>")
-    map("n", "<A-,>", "<CMD>BufferLineCyclePrev<CR>")
-    map("n", "<A-c>", "<CMD>BufferLinePickClose<CR>")
+    map("n", "<A-.>", "<CMD>bnext<CR>")
+    map("n", "<A-,>", "<CMD>bprevious<CR>")
+    map("n", "<A-c>", "<CMD>Bdelete<CR>")
   end,
 }
