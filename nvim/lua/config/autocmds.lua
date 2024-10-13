@@ -9,7 +9,7 @@ autocmd("ColorScheme", {
     hl(0, "Normal", { bg = "NONE" })
     hl(0, "NormalNC", { bg = "NONE" })
     hl(0, "CursorLine", { fg = "NONE", bg = "NONE" })
-    hl(0, "CursorLineNR", { fg = "#d79921", bg = "NONE", bold = true })
+    hl(0, "CursorLineNR", { fg = "#fabd2f", bg = "NONE", bold = true })
   end,
 })
 
@@ -66,8 +66,8 @@ autocmd("LspAttach", {
     local map = vim.keymap.set
     local lsp = vim.lsp.buf
 
-    map("n", "]d", vim.diagnostic.goto_next, opts)
-    map("n", "[d", vim.diagnostic.goto_prev, opts)
+    map("n", "<leader>d]", vim.diagnostic.goto_next, opts)
+    map("n", "<leader>d[", vim.diagnostic.goto_prev, opts)
     map("n", "<leader>e", vim.diagnostic.open_float, opts)
     map("n", "gd", lsp.definition, opts)
     map("n", "gi", lsp.implementation, opts)

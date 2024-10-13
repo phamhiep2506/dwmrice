@@ -16,8 +16,8 @@ return {
     })
 
     local map = vim.keymap.set
-    map("n", "<A-.>", "<CMD>bnext<CR>")
-    map("n", "<A-,>", "<CMD>bprevious<CR>")
-    map("n", "<A-c>", "<CMD>Bdelete<CR>")
+    map("n", "<leader>b]", "<CMD>bnext<CR>")
+    map("n", "<leader>b[", "<CMD>bprevious<CR>")
+    map("n", "<leader>bc", "<CMD>Bdelete<CR>")
   end,
 }

@@ -10,8 +10,8 @@ return {
     })
 
     local map = vim.keymap.set
-    map("n", "]g", gitsigns.next_hunk)
-    map("n", "[g", gitsigns.prev_hunk)
+    map("n", "<leader>g]", gitsigns.next_hunk)
+    map("n", "<leader>g[", gitsigns.prev_hunk)
     map("n", "<leader>gp", gitsigns.preview_hunk)
     map("n", "<leader>gd", gitsigns.diffthis)
     map("n", "<leader>gb", gitsigns.blame_line)

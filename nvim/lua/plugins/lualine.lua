@@ -2,8 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    local fn = vim.fn
-
     local colors = {
       bg = "#282828",
       fg = "#ebdbb2",
