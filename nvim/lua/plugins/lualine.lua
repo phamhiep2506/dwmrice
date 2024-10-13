@@ -8,7 +8,6 @@ return {
       bg = "#282828",
       fg = "#ebdbb2",
       red = "#fb4934",
-      green = "#b8bb26",
       blue = "#83a598",
     }
 
@@ -80,13 +79,6 @@ return {
     ins_left({
       "diff",
       symbols = { added = " ", modified = " ", removed = " " },
-    })
-
-    ins_right({
-      function()
-        return ""
-      end,
-      color = { fg = colors.green },
     })
 
     ins_right({
