@@ -84,21 +84,9 @@ return {
 
     ins_right({
       function()
-        local msg = ""
-        local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-        local clients = vim.lsp.get_active_clients()
-        if next(clients) == nil then
-          return msg
-        end
-        for _, client in ipairs(clients) do
-          local filetypes = client.config.filetypes
-          if filetypes and fn.index(filetypes, buf_ft) ~= -1 then
-            return " " .. client.name
-          end
-        end
-        return msg
+        return ""
       end,
-      color = { fg = colors.green, gui = "bold" },
+      color = { fg = colors.green },
     })
 
     ins_right({
