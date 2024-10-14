@@ -43,8 +43,6 @@
 
     "hyprland/window": {
         "format": "{title}",
-        "icon": true,
-        "icon-size": 15,
     },
 
     "network": {
