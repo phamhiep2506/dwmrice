@@ -156,6 +156,11 @@ install_pkg viewnior
 install_pkg slurp
 install_pkg grim
 
+# tool
+install_pkg httpie
+install_pkg fx
+install_pkg jq
+
 # zsh
 install_pkg zsh
 install_pkg lsd
