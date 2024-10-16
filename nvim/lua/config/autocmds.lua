@@ -1,6 +1,7 @@
 local hl = vim.api.nvim_set_hl
 local autocmd = vim.api.nvim_create_autocmd
 local fn = vim.fn
+local g = vim.g
 
 -- ColorScheme
 autocmd("ColorScheme", {
@@ -56,6 +57,20 @@ autocmd("BufEnter", {
   callback = function()
     fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
     fn.sign_define("DapStopped", { text = "", texthl = "DapStopped" })
+  end,
+})
+
+-- Slime
+g.slime_no_mappings = 1
+autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    g.slime_target = "tmux"
+    g.slime_default_config = {
+      socket_name = "default",
+      target_pane = "1",
+    }
+    g.slime_dont_ask_default = 1
   end,
 })
 
