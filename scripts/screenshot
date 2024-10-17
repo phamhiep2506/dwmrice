@@ -17,10 +17,9 @@ get_icon() {
 }
 
 notify_cmd() {
-  title="Screenshot"
   icon=$(get_icon)
 
-  dunstify --urgency normal $title "Save image to $HOME/Screenshots/$(file_name)" --icon=$icon
+  dunstify --urgency normal "Screenshot saved" "$HOME/Screenshots/$(file_name)" --icon=$icon
 }
 
 screenshot_full() {

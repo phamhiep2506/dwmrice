@@ -55,6 +55,7 @@ sudo ln -s $PWD/scripts/screenshot /usr/local/bin
 
 # wallpaper
 install_pkg feh
+feh --bg-fill $HOME/dotfiles/wallpaper/anime_girl_black.png
 
 # lockscreen
 install_pkg slock
