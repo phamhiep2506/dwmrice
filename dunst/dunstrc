@@ -1,12 +1,11 @@
 [global]
   frame_width = 2
   font = JetBrains Mono 9
-  offset = 20x20
   corner_radius = 10
   gap_size = 5
   icon_theme = Papirus
   enable_recursive_icon_lookup = true
-  icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps
+  icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
 
 [urgency_low]
   background = "#000000"

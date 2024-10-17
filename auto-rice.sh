@@ -33,21 +33,52 @@ sudo usermod -a -G video $USER
 # create folder config
 mkdir -p $HOME/.config
 
-# hyprland
-install_pkg hyprland
-install_pkg hyprpaper
-install_pkg hyprlock
-install_pkg hypridle
-install_pkg xdg-desktop-portal-hyprland
-rm_config $HOME/.config/hypr
-ln_config $PWD/hypr $HOME/.config
+# xinit
+install_pkg xorg
+install_pkg xorg-xinit
+ln_config $PWD/.xinitrc $HOME
 
-# wallpaper & lockscreen
-install_pkg swww
+# dwm
+(cd $PWD/dwm && sudo make clean install)
+install_pkg dmenu
+
+# install scripts
+sudo rm -rf /usr/local/bin/volume
+sudo rm -rf /usr/local/bin/battery
+sudo rm -rf /usr/local/bin/brightness
+sudo rm -rf /usr/local/bin/screenshot
+
+sudo ln -s $PWD/scripts/volume /usr/local/bin
+sudo ln -s $PWD/scripts/battery /usr/local/bin
+sudo ln -s $PWD/scripts/brightness /usr/local/bin
+sudo ln -s $PWD/scripts/screenshot /usr/local/bin
+
+# wallpaper
+install_pkg feh
 mkdir -p $HOME/.wallpaper
-mkdir -p $HOME/.lockscreen
-cp -av $HOME/dotfiles/images/default.png $HOME/.wallpaper
-cp -av $HOME/dotfiles/images/default.png $HOME/.lockscreen
+cp -av $HOME/dotfiles/wallpaper/anime_girl_black.png $HOME/.wallpaper
+
+# lockscreen
+install_pkg slock
+sudo tee /etc/systemd/system/slock@.service << EOF
+[Unit]
+Description=Lock X session using slock for user %i
+Before=sleep.target
+
+[Service]
+User=%i
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/xset dpms force suspend
+ExecStart=/usr/bin/slock
+
+[Install]
+WantedBy=sleep.target
+EOF
+sudo systemctl enable slock@$USER.service
+
+# ly
+install_pkg ly
+sudo systemctl enable ly.service
 
 # fcitx5
 install_pkg fcitx5
@@ -59,10 +90,6 @@ sudo tee /etc/environment << EOF
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
-
-XDG_CURRENT_DESKTOP=Hyprland
-XDG_SESSION_TYPE=wayland
-XDG_SESSION_DESKTOP=Hyprland
 EOF
 
 # font
@@ -71,11 +98,6 @@ install_pkg ttf-jetbrains-mono
 install_pkg ttf-jetbrains-mono-nerd
 install_pkg noto-fonts-cjk
 install_pkg noto-fonts-emoji
-
-# wofi
-install_pkg wofi
-rm_config $HOME/.config/wofi
-ln_config $PWD/wofi $HOME/.config
 
 # terminal
 install_pkg kitty
@@ -86,11 +108,6 @@ ln_config $PWD/kitty $HOME/.config
 install_pkg tmux
 rm_config $HOME/.config/tmux
 ln_config $PWD/tmux $HOME/.config
-
-# waybar
-install_pkg waybar
-rm_config $HOME/.config/waybar
-ln_config $PWD/waybar $HOME/.config
 
 # neovim
 install_pkg neovim
@@ -112,13 +129,13 @@ rm_config $HOME/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
 # wlsunset
-install_pkg wlsunset
+install_pkg redshift
 
 # nm-applet
 install_pkg network-manager-applet
 
 # clipboard
-install_pkg wl-clipboard
+install_pkg xclip
 
 # gtk/icon
 install_pkg materia-gtk-theme
@@ -153,10 +170,10 @@ install_pkg mpv
 install_pkg viewnior
 
 # screenshot
-install_pkg slurp
-install_pkg grim
+# install_pkg slurp
+install_pkg scrot
 
-# tool
+# utils
 install_pkg httpie
 install_pkg fx
 install_pkg jq

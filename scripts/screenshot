@@ -20,15 +20,15 @@ notify_cmd() {
   title="Screenshot"
   icon=$(get_icon)
 
-  dunstify --urgency normal $title "Save image to $(file_name)" --icon=$icon
+  dunstify --urgency normal $title "Save image to $HOME/Screenshots/$(file_name)" --icon=$icon
 }
 
 screenshot_full() {
-  grim $HOME/Screenshots/$(file_name)
+  scrot $HOME/Screenshots/$(file_name)
 }
 
 screenshot_select() {
-  slurp | grim $HOME/Screenshots/$(file_name)
+  scrot --select $HOME/Screenshots/$(file_name)
 }
 
 if [[ $# -ne 1 ]]; then
