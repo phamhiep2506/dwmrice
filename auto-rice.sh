@@ -136,6 +136,9 @@ install_pkg network-manager-applet
 # clipboard
 install_pkg xclip
 
+# picom
+install_pkg picom
+
 # gtk/icon
 install_pkg materia-gtk-theme
 install_pkg papirus-icon-theme
