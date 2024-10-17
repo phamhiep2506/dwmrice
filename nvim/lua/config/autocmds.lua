@@ -71,6 +71,11 @@ autocmd("VimEnter", {
       target_pane = "1",
     }
     g.slime_dont_ask_default = 1
+    vim.cmd([[
+      xmap <leader>r <Plug>SlimeRegionSend
+      nmap <leader>r <Plug>SlimeMotionSend
+      nmap <leader>rr <Plug>SlimeLineSend
+    ]])
   end,
 })
 

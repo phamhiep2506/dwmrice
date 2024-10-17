@@ -7,4 +7,5 @@ return {
   "moll/vim-bbye",
   "ntpeters/vim-better-whitespace",
   "jpalardy/vim-slime",
+  "junegunn/vim-easy-align",
 }
