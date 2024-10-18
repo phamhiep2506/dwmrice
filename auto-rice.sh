@@ -28,7 +28,7 @@ install_pkg wget
 install_pkg curl
 
 # add user to a group
-sudo usermod -a -G video $USER
+# sudo usermod -a -G video $USER
 
 # create folder config
 mkdir -p $HOME/.config
@@ -44,12 +44,12 @@ install_pkg dmenu
 
 # install scripts
 sudo rm -rf /usr/local/bin/volume
-sudo rm -rf /usr/local/bin/battery
+sudo rm -rf /usr/local/bin/batteryd
 sudo rm -rf /usr/local/bin/brightness
 sudo rm -rf /usr/local/bin/screenshot
 
 sudo ln -s $PWD/scripts/volume /usr/local/bin
-sudo ln -s $PWD/scripts/battery /usr/local/bin
+sudo ln -s $PWD/scripts/batteryd /usr/local/bin
 sudo ln -s $PWD/scripts/brightness /usr/local/bin
 sudo ln -s $PWD/scripts/screenshot /usr/local/bin
 
@@ -172,7 +172,6 @@ install_pkg mpv
 install_pkg viewnior
 
 # screenshot
-# install_pkg slurp
 install_pkg scrot
 
 # utils
