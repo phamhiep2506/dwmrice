@@ -1,6 +1,6 @@
-# Dotfiles (Hyprland)
+# Dotfiles (dwm)
 
-## Auto rice
+## Install
 
 ```bash
 git clone https://gitlab.com/phiepdev/dotfiles $HOME/dotfiles
