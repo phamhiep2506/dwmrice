@@ -27,17 +27,22 @@ install_pkg wget
 # curl
 install_pkg curl
 
+# archive
+install_pkg tar
+install_pkg unzip
+
 # create folder config
 mkdir -p $HOME/.config
 
 # xinit
 install_pkg xorg
 install_pkg xorg-xinit
-install_pkg xorg-xsetroot
 ln_config $PWD/.xinitrc $HOME
 
 # dwm
 (cd $PWD/dwm && sudo make clean install)
+
+# dmenu
 install_pkg dmenu
 
 # slstatus
@@ -142,7 +147,7 @@ ln_config $PWD/ranger $HOME/.config
 rm_config $HOME/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
-# wlsunset
+# redshift
 install_pkg redshift
 
 # nm-applet
@@ -157,7 +162,16 @@ install_pkg picom
 # gtk/icon
 install_pkg materia-gtk-theme
 install_pkg papirus-icon-theme
-install_pkg lxappearance-gtk3
+tee $HOME/.gtkrc-2.0 << EOF
+gtk-theme-name="Materia-dark"
+gtk-icon-theme-name="Papirus-Dark"
+EOF
+mkdir -p $HOME/.config/gtk-3.0
+tee $HOME/.config/gtk-3.0/settings.ini << EOF
+[Settings]
+gtk-theme-name=Materia-dark
+gtk-icon-theme-name=Papirus-Dark
+EOF
 
 # cursor
 wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz

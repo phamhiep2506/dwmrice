@@ -6,6 +6,6 @@ redshift -l 21.033333:105.849998 &
 nm-applet &
 picom &
 batteryd &
-$HOME/.fehbg &
+~/.fehbg &
 slstatus &
 dwm
