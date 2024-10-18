@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-while true; do
-  xsetroot -name "$(netspeed)|$(cpu)|$(memory)|VOL:$(volume --get)%|BN:$(brightness --get)%|$(date +%H:%M)"
-  sleep 1
-done
