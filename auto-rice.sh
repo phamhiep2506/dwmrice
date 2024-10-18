@@ -27,9 +27,6 @@ install_pkg wget
 # curl
 install_pkg curl
 
-# add user to a group
-# sudo usermod -a -G video $USER
-
 # create folder config
 mkdir -p $HOME/.config
 
@@ -95,6 +92,18 @@ sudo tee /etc/environment << EOF
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
+EOF
+
+# touchpad
+sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf << EOF
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "TappingButtonMap" "lmr"
+    Option "NaturalScrolling" "true"
+EndSection
 EOF
 
 # font
