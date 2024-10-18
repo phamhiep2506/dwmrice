@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+CPU_PERC=$(top -n 1 | grep '^%Cpu' | tail -n 1 | awk '{print $2+$4+$6}')
+
+printf "CPU:%.f%%" $CPU_PERC

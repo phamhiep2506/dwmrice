@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+MEMORY_PERC=$(free | grep Mem | awk '{print $3/$2 * 100}')
+
+printf "MEM:%.f%%" $MEMORY_PERC
