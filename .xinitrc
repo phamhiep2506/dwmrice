@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 dunst &
-fcitx5 &
-redshift -l 21.033333:105.849998 &
-nm-applet &
 picom &
-batteryd &
-~/.fehbg &
+redshift -l 21.033333:105.849998 &
 slstatus &
+nm-applet &
+fcitx5 &
+~/.fehbg &
+batteryd &
 dwm
