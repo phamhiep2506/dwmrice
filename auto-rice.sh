@@ -36,6 +36,7 @@ mkdir -p $HOME/.config
 # xinit
 install_pkg xorg
 install_pkg xorg-xinit
+install_pkg xorg-xsetroot
 ln_config $PWD/.xinitrc $HOME
 
 # dwm
