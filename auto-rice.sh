@@ -196,7 +196,7 @@ install_pkg mpv
 install_pkg viewnior
 
 # screenshot
-install_pkg scrot
+install_pkg flameshot
 
 # utils
 install_pkg httpie
