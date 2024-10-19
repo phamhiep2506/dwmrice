@@ -63,7 +63,6 @@ sudo ln -s $PWD/scripts/netspeed /usr/local/bin
 
 # wallpaper
 install_pkg feh
-feh --bg-fill $HOME/dotfiles/wallpaper/anime_girl_black.png
 
 # lockscreen
 install_pkg slock
@@ -136,6 +135,7 @@ ln_config $PWD/nvim $HOME/.config
 
 # dunst
 install_pkg dunst
+install_pkg libnotify
 rm_config $HOME/.config/dunst
 ln_config $PWD/dunst $HOME/.config
 
