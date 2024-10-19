@@ -118,9 +118,9 @@ install_pkg noto-fonts-cjk
 install_pkg noto-fonts-emoji
 
 # terminal
-install_pkg kitty
-rm_config $HOME/.config/kitty
-ln_config $PWD/kitty $HOME/.config
+install_pkg alacritty
+rm_config $HOME/.config/alacritty
+ln_config $PWD/alacritty $HOME/.config
 
 # tmux
 install_pkg tmux
@@ -142,6 +142,7 @@ ln_config $PWD/dunst $HOME/.config
 # ranger
 install_pkg ranger
 install_pkg python-pillow
+install_pkg ueberzug
 rm_config $HOME/.config/ranger
 ln_config $PWD/ranger $HOME/.config
 rm_config $HOME/.config/ranger/plugins/ranger_devicons
