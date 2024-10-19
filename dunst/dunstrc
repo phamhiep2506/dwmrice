@@ -1,5 +1,5 @@
 [global]
-  frame_width = 2
+  frame_width = 1
   font = JetBrains Mono 9
   corner_radius = 10
   gap_size = 5
