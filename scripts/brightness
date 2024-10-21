@@ -57,7 +57,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 if [[ "$1" == "--get" ]]; then
-  percent_backlight
+  echo "$(percent_backlight)%"
 elif [[ "$1" == "--inc" ]]; then
   inc_backlight
   notify_cmd

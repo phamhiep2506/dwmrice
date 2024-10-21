@@ -37,6 +37,7 @@ mkdir -p $HOME/.config
 # xinit
 install_pkg xorg
 install_pkg xorg-xinit
+install_pkg xorg-xsetroot
 ln_config $PWD/.xinitrc $HOME
 
 # dwm
@@ -45,21 +46,26 @@ ln_config $PWD/.xinitrc $HOME
 # dmenu
 install_pkg dmenu
 
-# slstatus
-(cd $PWD/slstatus && sudo make clean install)
-
 # install scripts
 sudo rm -rf /usr/local/bin/volume
 sudo rm -rf /usr/local/bin/batteryd
 sudo rm -rf /usr/local/bin/brightness
 sudo rm -rf /usr/local/bin/screenshot
 sudo rm -rf /usr/local/bin/netspeed
+sudo rm -rf /usr/local/bin/cpu
+sudo rm -rf /usr/local/bin/ram
+sudo rm -rf /usr/local/bin/battery
+sudo rm -rf /usr/local/bin/bar
 
 sudo ln -s $PWD/scripts/volume /usr/local/bin
 sudo ln -s $PWD/scripts/batteryd /usr/local/bin
 sudo ln -s $PWD/scripts/brightness /usr/local/bin
 sudo ln -s $PWD/scripts/screenshot /usr/local/bin
 sudo ln -s $PWD/scripts/netspeed /usr/local/bin
+sudo ln -s $PWD/scripts/cpu /usr/local/bin
+sudo ln -s $PWD/scripts/ram /usr/local/bin
+sudo ln -s $PWD/scripts/battery /usr/local/bin
+sudo ln -s $PWD/scripts/bar /usr/local/bin
 
 # wallpaper
 install_pkg feh

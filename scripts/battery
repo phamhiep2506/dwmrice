@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+power="BAT0"
+battery_discharging="Discharging"
+battery_charging="Charging"
+
+get_battery_status() {
+  status=$(cat /sys/class/power_supply/$power/status)
+  if [[ $status == $battery_charging ]]
+  then
+    echo -n "+"
+  elif [[ $status == $battery_discharging ]]
+  then
+    echo -n "-"
+  else
+    echo -n ""
+  fi
+}
+
+get_battery_capacity() {
+  echo -n $(cat /sys/class/power_supply/$power/capacity)
+}
+
+echo -n "$(get_battery_status)$(get_battery_capacity)%"
