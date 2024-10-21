@@ -96,14 +96,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, SHCMD("volume --inc") },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn, SHCMD("volume --dec") },
-	{ 0,                            XF86XK_AudioMute,         spawn, SHCMD("volume --toggle") },
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("brightness --inc") },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("brightness --dec") },
-	{ MODKEY,                       XK_s,                     spawn, SHCMD("flameshot full") },
-	{ MODKEY|ShiftMask,             XK_s,                     spawn, SHCMD("flameshot gui") },
-	{ MODKEY,                       XK_Escape,                spawn, SHCMD("slock") },
+	{ 0,                            XF86XK_AudioRaiseVolume,   spawn, SHCMD("volume --inc") },
+	{ 0,                            XF86XK_AudioLowerVolume,   spawn, SHCMD("volume --dec") },
+	{ 0,                            XF86XK_AudioMute,          spawn, SHCMD("volume --toggle") },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn, SHCMD("brightness --inc") },
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn, SHCMD("brightness --dec") },
+	{ MODKEY,                       XK_s,                      spawn, SHCMD("flameshot full") },
+	{ MODKEY|ShiftMask,             XK_s,                      spawn, SHCMD("flameshot gui") },
+	{ MODKEY,                       XK_Escape,                 spawn, SHCMD("slock") },
 };
 
 /* button definitions */
