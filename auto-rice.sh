@@ -157,9 +157,6 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ra
 # redshift
 install_pkg redshift
 
-# nm-applet
-install_pkg network-manager-applet
-
 # clipboard
 install_pkg xclip
 
