@@ -2,5 +2,5 @@
 
 while true; do
   xsetroot -name "$(netspeed)|CPU $(cpu)|RAM $(ram)|VOL $(volume --get)|BN $(brightness --get)|BAT $(battery)|$(date +'%H:%M')"
-  sleep 1
+  sleep 0.5
 done
