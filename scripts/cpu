@@ -1,5 +1,16 @@
 #!/usr/bin/env sh
 
-CPU_PERC=$(top -b -n 1 | grep '%Cpu' | awk '{print 100-$8}')
+cpu_last=$(cat /proc/stat | grep cpu | head -n 1)
+cpu_last_sum=$(echo $cpu_last | awk '{print $2+$3+$4+$5+$6+$7+$8}')
 
-printf "%.f%%" $CPU_PERC
+sleep 0.05
+
+cpu_now=$(cat /proc/stat | grep cpu | head -n 1)
+cpu_now_sum=$(echo $cpu_now | awk '{print $2+$3+$4+$5+$6+$7+$8}')
+
+cpu_delta=$(($cpu_now_sum - $cpu_last_sum))
+cpu_idle=$(($(echo $cpu_now | awk '{print $5}') - $(echo $cpu_last | awk '{print $5}')))
+cpu_used=$(($cpu_delta - $cpu_idle))
+cpu_usage=$((100 * $cpu_used / $cpu_delta))
+
+printf "%d%%" $cpu_usage

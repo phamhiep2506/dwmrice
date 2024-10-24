@@ -21,4 +21,4 @@ get_battery_capacity() {
   echo -n $(cat /sys/class/power_supply/$power/capacity)
 }
 
-echo -n "$(get_battery_status)$(get_battery_capacity)%"
+printf "%s%d%%" $(get_battery_status) $(get_battery_capacity)

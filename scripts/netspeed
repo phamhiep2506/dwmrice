@@ -1,24 +1,24 @@
 #!/usr/bin/env sh
 
-INTERFACE=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
+interface=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
 
-if [[ "$INTERFACE" == "" ]]
+if [[ $interface == "" ]]
 then
   exit
 fi
 
-TX_BYTES_1=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
-RX_BYTES_1=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
+tx_bytes_last=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+rx_bytes_last=$(cat /sys/class/net/$interface/statistics/rx_bytes)
 
 sleep 1
 
-TX_BYTES_2=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
-RX_BYTES_2=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
+tx_bytes_now=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+rx_bytes_now=$(cat /sys/class/net/$interface/statistics/rx_bytes)
 
-TX_BYTES=$(($TX_BYTES_2 - $TX_BYTES_1))
-RX_BYTES=$(($RX_BYTES_2 - RX_BYTES_1))
+tx_bytes=$(($tx_bytes_now - $tx_bytes_last))
+rx_bytes=$(($rx_bytes_now - $rx_bytes_last))
 
-TX_MBPS=$(echo "$TX_BYTES*0.000008" | bc)
-RX_MBPS=$(echo "$RX_BYTES*0.000008" | bc)
+tx_mbps=$(echo "$tx_bytes*0.000008" | bc)
+rx_mbps=$(echo "$rx_bytes*0.000008" | bc)
 
-printf " %.2f  %.2f Mbps" $TX_MBPS $RX_MBPS
+printf " %.2f  %.2f Mbps" $tx_mbps $rx_mbps
