@@ -10,6 +10,7 @@ return {
         c = { "clang-format" },
         cpp = { "clang-format" },
         cs = { "csharpier" },
+        cmake = { "cmake_format" },
         html = { "prettier" },
         css = { "prettier" },
         sass = { "prettier" },

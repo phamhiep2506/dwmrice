@@ -6,6 +6,6 @@ return {
   "tpope/vim-sleuth",
   "moll/vim-bbye",
   "ntpeters/vim-better-whitespace",
-  "jpalardy/vim-slime",
   "junegunn/vim-easy-align",
+  "jpalardy/vim-slime",
 }
