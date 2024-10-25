@@ -8,12 +8,12 @@ get_battery_status() {
   status=$(cat /sys/class/power_supply/$power/status)
   if [[ $status == $battery_charging ]]
   then
-    echo -n "+"
+    echo "+"
   elif [[ $status == $battery_discharging ]]
   then
-    echo -n "-"
+    echo "-"
   else
-    echo -n ""
+    echo ""
   fi
 }
 

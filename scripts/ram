@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
-cpu_usage=$(free | grep Mem | awk '{print $3/$2 * 100}')
+info=$(cat /proc/meminfo)
 
-printf "%.f%%" $cpu_usage
+total=$(echo $info | awk '{print $2}')
+free=$(echo $info | awk '{print $5}')
+buffers=$(echo $info | awk '{print $11}')
+cached=$(echo $info | awk '{print $14}')
+
+usage=$((100 * (($total - $free) - ($buffers + $cached)) / $total))
+
+printf "%d%%" $usage

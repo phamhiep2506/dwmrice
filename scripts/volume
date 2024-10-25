@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 get_volume() {
-  echo -n $(pamixer --get-volume)
+  echo $(pamixer --get-volume)
 }
 
 get_muted() {
-  echo -n $(pamixer --get-mute)
+  echo $(pamixer --get-mute)
 }
 
 get_icon() {
@@ -14,17 +14,13 @@ get_icon() {
 
   if [[ $muted == "true" ]]; then
     echo "audio-volume-muted"
-    return
-	elif [[ ($volume -ge 0) && ($volume -le 30) ]]; then
+  elif [[ ($volume -ge 0) && ($volume -le 30) ]]; then
     echo "audio-volume-low"
-    return
-	elif [[ ($volume -ge 30) && ($volume -le 60) ]]; then
+  elif [[ ($volume -ge 30) && ($volume -le 60) ]]; then
     echo "audio-volume-medium"
-    return
-	elif [[ ($volume -ge 60) && ($volume -le 100) ]]; then
+  elif [[ ($volume -ge 60) && ($volume -le 100) ]]; then
     echo "audio-volume-high"
-    return
-	fi
+  fi
 }
 
 notify_cmd() {
@@ -98,15 +94,15 @@ if [[ $# -ne 1 ]]; then
   exit 1
 fi
 
-if [[ "$1" == "--get" ]]; then
-  echo "$(get_volume)%"
+if [[ $1 == "--get" ]]; then
+  printf "%d%%" $(get_volume)
 elif [[ "$1" == "--inc" ]]; then
   inc_volume
-elif [[ "$1" == "--dec" ]]; then
+elif [[ $1 == "--dec" ]]; then
   dec_volume
-elif [[ "$1" == "--toggle" ]]; then
+elif [[ $1 == "--toggle" ]]; then
   toggle_mute
-elif [[ "$1" == "--help" ]]; then
+elif [[ $1 == "--help" ]]; then
   help
   exit 1
 else

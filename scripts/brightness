@@ -1,26 +1,26 @@
 #!/usr/bin/env sh
 
 get_backlight() {
-  echo -n $(brightnessctl get)
+  echo $(brightnessctl get)
 }
 
 get_backlight_max() {
-  echo -n $(brightnessctl max)
+  echo $(brightnessctl max)
 }
 
 percent_backlight() {
-  echo -n $(($(($(get_backlight) * 100)) / $(get_backlight_max)))
+  echo $((100 * $(get_backlight) / $(get_backlight_max)))
 }
 
 get_icon() {
   perc=$(percent_backlight)
 
   if [[ ($perc -ge 0) && ($perc -le 35) ]]; then
-    echo -n "brightness-low-symbolic"
+    echo "brightness-low-symbolic"
   elif [[ ($perc -ge 35) && ($perc -le 70) ]]; then
-    echo -n "brightness-medium-symbolic"
+    echo "brightness-medium-symbolic"
   elif [[ ($perc -ge 70) && ($perc -le 100) ]]; then
-    echo -n "brightness-high-symbolic"
+    echo "brightness-high-symbolic"
   fi
 }
 
@@ -56,12 +56,12 @@ if [[ $# -ne 1 ]]; then
   exit 1
 fi
 
-if [[ "$1" == "--get" ]]; then
-  echo "$(percent_backlight)%"
-elif [[ "$1" == "--inc" ]]; then
+if [[ $1 == "--get" ]]; then
+  printf "%d%%" $(percent_backlight)
+elif [[ $1 == "--inc" ]]; then
   inc_backlight
   notify_cmd
-elif [[ "$1" == "--dec" ]]; then
+elif [[ $1 == "--dec" ]]; then
   dec_backlight
   notify_cmd
 else
