@@ -36,12 +36,10 @@
         "statusBar.background": "#000000",
         "terminal.background": "#000000",
         "activityBar.background": "#000000",
-        "editorSuggestWidget.background": "#000000",
         "editorGroupHeader.tabsBackground": "#000000",
         "tab.activeBackground": "#000000",
         "tab.inactiveBackground": "#000000",
         "tab.activeBorder": "#fabd2f",
-        "quickInput.background": "#000000"
     },
     // vim
     "vim.easymotion": true,
