@@ -5,6 +5,7 @@
     "workbench.iconTheme": "material-icon-theme",
     // font
     "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
+    "editor.fontLigatures": true,
     // font size
     "editor.fontSize": 16,
     // line highlight
@@ -13,8 +14,6 @@
     "editor.occurrencesHighlight": "off",
     // transparent
     "glassit.alpha": 220,
-    // tab bar action position
-    "workbench.editor.editorActionsLocation": "hidden",
     // menu bar
     "window.menuBarVisibility": "hidden",
     // minimap
