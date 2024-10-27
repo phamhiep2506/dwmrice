@@ -1,337 +1,194 @@
 {
-    // color theme
-    "workbench.colorTheme": "Gruvbox Dark Hard",
-    // icon theme
-    "workbench.iconTheme": "material-icon-theme",
-    // font
-    "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
-    "editor.fontLigatures": true,
-    // font size
-    "editor.fontSize": 16,
-    // line highlight
-    "editor.renderLineHighlight": "none",
-    // word highlight
-    "editor.occurrencesHighlight": "off",
-    // transparent
-    "glassit.alpha": 220,
-    // menu bar
-    "window.menuBarVisibility": "hidden",
-    // minimap
-    "editor.minimap.enabled": false,
-    // sticky scroll code
-    "editor.stickyScroll.enabled": false,
-    // smooth
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.cursorBlinking": "smooth",
-    // line height
-    "editor.lineHeight": 1.6,
-    // terminal
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
-    "terminal.integrated.fontSize": 15,
-    // custom theme
-    "workbench.colorCustomizations": {
-        "sideBar.background": "#000000",
-        "editor.background": "#000000",
-        "statusBar.background": "#000000",
-        "terminal.background": "#000000",
-        "activityBar.background": "#000000",
-        "editorGroupHeader.tabsBackground": "#000000",
-        "tab.activeBackground": "#000000",
-        "tab.inactiveBackground": "#000000",
-        "tab.activeBorder": "#fabd2f",
-        "scrollbarSlider.background":"#00000000",
-        "scrollbarSlider.activeBackground": "#00000000",
-        "scrollbarSlider.hoverBackground": "#00000000"
+  // color theme
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  // icon theme
+  "workbench.iconTheme": "material-icon-theme",
+  // font
+  "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
+  "editor.fontLigatures": true,
+  // font size
+  "editor.fontSize": 16,
+  // line highlight
+  "editor.renderLineHighlight": "none",
+  // word highlight
+  "editor.occurrencesHighlight": "off",
+  // transparent
+  "glassit.alpha": 220,
+  // menu bar
+  "window.menuBarVisibility": "hidden",
+  // minimap
+  "editor.minimap.enabled": false,
+  // sticky scroll code
+  "editor.stickyScroll.enabled": false,
+  // smooth
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth",
+  // line height
+  "editor.lineHeight": 1.6,
+  // terminal
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
+  "terminal.integrated.fontSize": 15,
+  // startup
+  "workbench.startupEditor": "none",
+  // scroll bar
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  // custom theme
+  "workbench.colorCustomizations": {
+    "sideBar.background": "#000000",
+    "editor.background": "#000000",
+    "statusBar.background": "#000000",
+    "terminal.background": "#000000",
+    "activityBar.background": "#000000",
+    "editorGroupHeader.tabsBackground": "#000000",
+    "tab.activeBackground": "#000000",
+    "tab.inactiveBackground": "#000000",
+    "tab.activeBorder": "#fabd2f",
+    "scrollbarSlider.background": "#00000000",
+    "scrollbarSlider.activeBackground": "#00000000",
+    "scrollbarSlider.hoverBackground": "#00000000"
+  },
+  // error lens
+  "errorLens.messageTemplate": "■ $message",
+  // vim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.hlsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
     },
-    // error lens
-    "errorLens.messageTemplate": "■ $message",
-    // vim
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": false,
-    "vim.hlsearch": true,
-    "vim.smartRelativeLine": true,
-    "vim.leader": "<space>",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "f"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "c"
-            ],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.gotoSymbol"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "b"
-            ],
-            "commands": [
-                "workbench.action.showEditorsInActiveGroup"
-            ]
-        },
-        {
-            "before": [
-                "j"
-            ],
-            "after": [
-                "j",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "k"
-            ],
-            "after": [
-                "k",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "J"
-            ],
-            "after": [
-                "5",
-                "j",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "5",
-                "k",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "n"
-            ],
-            "after": [
-                "n",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "N"
-            ],
-            "after": [
-                "N",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "_"
-            ],
-            "commands": [
-                ":split"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "|"
-            ],
-            "commands": [
-                ":vsplit"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p"
-            ],
-            "after": [
-                "\"",
-                "+",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "<Enter>"
-            ],
-            "commands": [
-                ":nohlsearch"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "d"
-            ],
-            "commands": [
-                "editor.action.revealDefinition"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "r"
-            ],
-            "commands": [
-                "editor.action.goToReferences"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "m"
-            ],
-            "commands": [
-                "editor.action.formatDocument"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "h",
-            ],
-            "commands": [
-                "editor.action.showHover"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "a",
-            ],
-            "commands": [
-                "editor.action.quickFix"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "r",
-                "n",
-            ],
-            "commands": [
-                "editor.action.rename"
-            ]
-        },
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                "<leader>",
-                "p"
-            ],
-            "after": [
-                "\"",
-                "+",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "y"
-            ],
-            "after": [
-                "\"",
-                "+",
-                "y"
-            ]
-        },
-        {
-            "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "after": [
-                "<",
-                "g",
-                "v"
-            ]
-        },
-    ],
-    // cmake
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
-    // format
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<leader>", "f", "c"],
+      "commands": ["workbench.action.showCommands"]
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
     },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.action.showEditorsInActiveGroup"]
     },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["j"],
+      "after": ["j", "z", "z"]
     },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["k"],
+      "after": ["k", "z", "z"]
     },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["J"],
+      "after": ["5", "j", "z", "z"]
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["K"],
+      "after": ["5", "k", "z", "z"]
     },
-    "[csharp]": {
-        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
     },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["<leader>", "_"],
+      "commands": [":split"]
+    },
+    {
+      "before": ["<leader>", "|"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<leader>", "<Enter>"],
+      "commands": [":nohlsearch"]
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+  // cmake
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  // format
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  }
 }
