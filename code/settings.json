@@ -39,6 +39,9 @@
         "tab.activeBackground": "#000000",
         "tab.inactiveBackground": "#000000",
         "tab.activeBorder": "#fabd2f",
+        "scrollbarSlider.background":"#00000000",
+        "scrollbarSlider.activeBackground": "#00000000",
+        "scrollbarSlider.hoverBackground": "#00000000"
     },
     // error lens
     "errorLens.messageTemplate": "■ $message",
@@ -154,26 +157,6 @@
         },
         {
             "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "after": [
-                "<",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
                 "<leader>",
                 "_"
             ],
@@ -226,6 +209,15 @@
             ],
             "commands": [
                 "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
             ]
         },
         {
@@ -289,6 +281,26 @@
                 "\"",
                 "+",
                 "y"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v"
             ]
         },
     ],
