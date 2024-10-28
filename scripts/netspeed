@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-interface=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
+interface=$(ip route get 1.1.1.1 | awk '{print $5}')
 
 if [[ $interface == "" ]]
 then
