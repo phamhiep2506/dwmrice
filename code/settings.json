@@ -28,11 +28,10 @@
   // terminal
   "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font'",
   "terminal.integrated.fontSize": 15,
+  // rule
+  "editor.rulers": [80, 120],
   // startup
   "workbench.startupEditor": "none",
-  // scroll bar
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
   // activity bar
   "workbench.activityBar.location": "bottom",
   "window.customTitleBarVisibility": "never",
@@ -47,9 +46,8 @@
     "tab.activeBackground": "#000000",
     "tab.inactiveBackground": "#000000",
     "tab.activeBorder": "#fabd2f",
-    "scrollbarSlider.background": "#00000000",
-    "scrollbarSlider.activeBackground": "#00000000",
-    "scrollbarSlider.hoverBackground": "#00000000"
+    "scrollbarSlider.hoverBackground": "#00000000",
+    "editorLineNumber.activeForeground": "#fabd2f"
   },
   // error lens
   "errorLens.messageTemplate": "■ $message",
@@ -58,7 +56,8 @@
   "vim.incsearch": true,
   "vim.useSystemClipboard": false,
   "vim.hlsearch": true,
-  "vim.smartRelativeLine": true,
+  "vim.foldfix": true,
+  "editor.lineNumbers": "relative",
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
     {
@@ -114,7 +113,7 @@
       "after": ["\"", "+", "p"]
     },
     {
-      "before": ["<leader>", "<Enter>"],
+      "before": ["<leader>", "Enter"],
       "commands": [":nohlsearch"]
     },
     {
