@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+code --install-extension christian-kohler.path-intellisense
+code --install-extension csharpier.csharpier-vscode
 code --install-extension editorconfig.editorconfig
 code --install-extension esbenp.prettier-vscode
 code --install-extension jdinhlife.gruvbox
@@ -14,4 +16,5 @@ code --install-extension ms-vscode.cpptools-themes
 code --install-extension pkief.material-icon-theme
 code --install-extension s-nlf-fh.glassit
 code --install-extension twxs.cmake
+code --install-extension usernamehw.errorlens
 code --install-extension vscodevim.vim

@@ -33,13 +33,16 @@
   // scroll bar
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
+  // activity bar
+  "workbench.activityBar.location": "bottom",
+  "window.customTitleBarVisibility": "never",
   // custom theme
   "workbench.colorCustomizations": {
     "sideBar.background": "#000000",
     "editor.background": "#000000",
     "statusBar.background": "#000000",
     "terminal.background": "#000000",
-    "activityBar.background": "#000000",
+    "activityBarTop.background": "#000000",
     "editorGroupHeader.tabsBackground": "#000000",
     "tab.activeBackground": "#000000",
     "tab.inactiveBackground": "#000000",
