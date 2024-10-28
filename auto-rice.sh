@@ -211,10 +211,12 @@ install_pkg jq
 install_pkg zsh
 install_pkg lsd
 mkdir -p $HOME/.zsh/plugins
+rm_config $HOME/.zsh/plugins/zsh-completions
 rm_config $HOME/.zsh/plugins/zsh-autosuggestions
 rm_config $HOME/.zsh/plugins/zsh-syntax-highlighting
 rm_config $HOME/.zsh/plugins/zsh-vi-mode
 rm_config $HOME/.zshrc
+git clone https://github.com/zsh-users/zsh-completions $HOME/.zsh/plugins/zsh-completions --depth 1
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mode --depth 1
