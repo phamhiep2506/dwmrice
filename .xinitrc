@@ -8,4 +8,5 @@ fcitx5 &
 batteryd &
 pkill -f /usr/local/bin/bar
 bar &
+xbanish &
 dwm

@@ -202,6 +202,11 @@ install_pkg viewnior
 # screenshot
 install_pkg flameshot
 
+# auto hide cursor
+git clone https://github.com/jcs/xbanish --depth 1
+(cd $PWD/xbanish && sudo make install)
+rm_config $PWD/xbanish
+
 # zsh
 install_pkg zsh
 install_pkg lsd
