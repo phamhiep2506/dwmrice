@@ -133,11 +133,11 @@ install_pkg tmux
 rm_config $HOME/.config/tmux
 ln_config $PWD/tmux $HOME/.config
 
-# neovim
-install_pkg neovim
-install_pkg ripgrep
-rm_config $HOME/.config/nvim
-ln_config $PWD/nvim $HOME/.config
+# vim
+install_pkg gvim
+rm_config $HOME/.vimrc
+ln_config $PWD/.vimrc $HOME
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # dunst
 install_pkg dunst

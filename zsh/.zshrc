@@ -34,7 +34,7 @@ export PATH=$HOME/.python/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 alias ls='lsd'
-alias vim='nvim'
+# alias vim='nvim'
 
 source $HOME/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
