@@ -73,8 +73,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
-Plug 'easymotion/vim-easymotion'
-Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let g:gruvbox_contrast_dark="hard"
