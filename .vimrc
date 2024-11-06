@@ -6,6 +6,7 @@ set nowrap
 set cursorline
 set clipboard=
 set background=dark
+set termguicolors
 
 " Search
 set hlsearch
@@ -61,18 +62,20 @@ nmap <leader><Enter> <CMD>nohlsearch<CR>
 " Custom highlight
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight CursorLine ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
+autocmd ColorScheme * highlight CursorLine ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight CursorLineNR ctermfg=11 guifg=#fabd2f ctermbg=NONE guibg=NONE
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-repeat',
-Plug 'tpope/vim-surround',
-Plug 'tpope/vim-commentary',
-Plug 'tpope/vim-sensible',
-Plug 'tpope/vim-sleuth',
-Plug 'tpope/vim-vinegar',
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-vinegar'
+Plug 'easymotion/vim-easymotion'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-colorscheme gruvbox
 let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
