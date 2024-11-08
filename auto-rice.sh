@@ -135,6 +135,8 @@ ln_config $PWD/tmux $HOME/.config
 
 # vim
 install_pkg gvim
+install_pkg ripgrep
+install_pkg fzf
 rm_config $HOME/.vimrc
 ln_config $PWD/.vimrc $HOME
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
