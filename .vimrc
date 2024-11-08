@@ -66,21 +66,12 @@ vmap <leader>y "+y
 nmap <leader><Enter> <CMD>nohlsearch<CR>
 
 " Custom highlight
-autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-
 autocmd ColorScheme * highlight CursorLine ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight CursorLineNR ctermfg=11 guifg=#fabd2f ctermbg=NONE guibg=NONE
 
-autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
-
-autocmd ColorScheme * highlight GitGutterAdd ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight GitGutterChange ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight GitGutterDelete ctermbg=NONE guibg=NONE
-
 " Plugins
 call plug#begin()
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -100,8 +91,14 @@ Plug 'puremourning/vimspector'
 call plug#end()
 
 " Gruvbox
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+let g:gruvbox_material_foreground="original"
+let g:gruvbox_material_background="hard"
+let g:gruvbox_material_enable_bold=1
+let g:gruvbox_material_enable_italic=1
+let g:gruvbox_material_visual="reverse"
+let g:gruvbox_material_transparent_background=1
+let g:gruvbox_material_better_performance=1
+colorscheme gruvbox-material
 
 " Fzf
 nmap <leader>ff <CMD>Files<CR>
