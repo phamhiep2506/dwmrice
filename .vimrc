@@ -109,3 +109,19 @@ nmap <leader>fc <CMD>Commands<CR>
 " Nerdtree
 let NERDTreeMinimalUI=1
 nmap <C-n> <CMD>NERDTreeToggle<CR>
+
+" Gitgutter
+let g:gitgutter_map_keys=0
+
+" Coc.nvim
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap [d <Plug>(coc-diagnostic-prev)
+nmap ]d <Plug>(coc-diagnostic-next)
+nmap gd <Plug>(coc-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gi <Plug>(coc-implementation)
+nmap gr <Plug>(coc-references)
+nmap <leader>h <CMD>call CocActionAsync("doHover")<CR>
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ca <Plug>(coc-codeaction-cursor)
