@@ -116,12 +116,23 @@ let g:gitgutter_map_keys=0
 " Coc.nvim
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-@> coc#refresh()
 nmap [d <Plug>(coc-diagnostic-prev)
 nmap ]d <Plug>(coc-diagnostic-next)
 nmap gd <Plug>(coc-definition)
-nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
 nmap <leader>h <CMD>call CocActionAsync("doHover")<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction-cursor)
+
+" Vimspector
+nmap <leader>dc <Plug>VimspectorContinue
+nmap <leader>ds <Plug>VimspectorStop
+nmap <leader>dr <Plug>VimpectorRestart
+nmap <leader>db <Plug>VimspectorToggleBreakpoint
+nmap <leader>di <Plug>VimspectorStepInto
+nmap <leader>do <Plug>VimspectorStepOut
+nmap <leader>dO <Plug>VimspectorStepOver
+nmap <leader>de <Plug>VimspectorBalloonEval
+xmap <leader>de <Plug>VimspectorBalloonEval
