@@ -133,13 +133,11 @@ install_pkg tmux
 rm_config $HOME/.config/tmux
 ln_config $PWD/tmux $HOME/.config
 
-# vim
-install_pkg gvim
+# nvim
+install_pkg nvim
 install_pkg ripgrep
-install_pkg fzf
-rm_config $HOME/.vimrc
-ln_config $PWD/.vimrc $HOME
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+rm_config $HOME/.config/nvim
+ln_config $PWD/nvim $HOME/.config
 
 # dunst
 install_pkg dunst
@@ -213,12 +211,10 @@ rm_config $PWD/xbanish
 install_pkg zsh
 install_pkg lsd
 mkdir -p $HOME/.zsh/plugins
-rm_config $HOME/.zsh/plugins/zsh-completions
 rm_config $HOME/.zsh/plugins/zsh-autosuggestions
 rm_config $HOME/.zsh/plugins/zsh-syntax-highlighting
 rm_config $HOME/.zsh/plugins/zsh-vi-mode
 rm_config $HOME/.zshrc
-git clone https://github.com/zsh-users/zsh-completions $HOME/.zsh/plugins/zsh-completions --depth 1
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mode --depth 1

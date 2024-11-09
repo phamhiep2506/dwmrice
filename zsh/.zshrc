@@ -21,7 +21,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=2000
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
 export JAVA_HOME=/opt/jdk21
@@ -34,8 +34,8 @@ export PATH=$HOME/.python/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 alias ls='lsd'
+alias vim='nvim'
 
-source $HOME/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $HOME/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
