@@ -208,7 +208,7 @@ git clone https://github.com/jcs/xbanish --depth 1
 rm_config $PWD/xbanish
 
 # zsh
-curl -sS https://starship.rs/install.sh | sh
+install_pkg starship
 install_pkg zsh
 install_pkg lsd
 mkdir -p $HOME/.zsh/plugins
