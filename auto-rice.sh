@@ -208,6 +208,7 @@ git clone https://github.com/jcs/xbanish --depth 1
 rm_config $PWD/xbanish
 
 # zsh
+curl -sS https://starship.rs/install.sh | sh
 install_pkg zsh
 install_pkg lsd
 mkdir -p $HOME/.zsh/plugins
@@ -219,7 +220,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zs
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mode --depth 1
 ln_config $PWD/zsh/.zshrc $HOME
-chsh -s /bin/zsh
+ln_config $PWD/zsh/starship.toml $HOME/.config
 
 # reboot
 read -p "Reboot now? (y/n) " yn

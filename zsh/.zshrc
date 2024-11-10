@@ -1,40 +1,28 @@
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-autoload -Uz compinit
+autoload -U compinit
 compinit
+zstyle ":completion:*" menu select
 
-autoload -Uz colors
-colors
-
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr '*'
-zstyle ':vcs_info:git:*' formats ' %b%u'
-zstyle ':completion:*' menu select
-
-setopt PROMPT_SUBST
-setopt MENU_COMPLETE
-PROMPT='%B%F{green}┌───(%f%F{blue}%n@%m%f%F{green})-[%f%F{magenta}%2~%f%F{red}${vcs_info_msg_0_}%f%F{green}]
-└─%f%F{blue}$%f %b'
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.config/starship.toml
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=10000
 
-export EDITOR='nvim'
+export EDITOR="nvim"
 export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
-export JAVA_HOME=/opt/jdk21
+export JAVA_HOME=/opt/jdk
 export PATH=$HOME/.local/bin:$PATH
-export PATH=/opt/jdk21/bin:$PATH
+export PATH=/opt/jdk/bin:$PATH
 export PATH=/opt/node/bin:$PATH
 export PATH=/opt/docker:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.python/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-alias ls='lsd'
-alias vim='nvim'
+alias ls="lsd"
+alias vim="nvim"
 
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
