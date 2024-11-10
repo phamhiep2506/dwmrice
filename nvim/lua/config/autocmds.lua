@@ -20,31 +20,12 @@ autocmd("BufEnter", {
   end,
 })
 
--- NeoTree
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    hl(0, "NeoTreeNormal", { bg = "NONE" })
-    hl(0, "NeoTreeNormalNC", { bg = "NONE" })
-    hl(0, "NeoTreeEndOfBuffer", { bg = "NONE" })
-    hl(0, "NeoTreeFloatTitle", { bg = "NONE" })
-  end,
-})
-
--- Trouble
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    hl(0, "TroubleNormal", { bg = "NONE" })
-    hl(0, "TroubleNormalNC", { bg = "NONE" })
-  end,
-})
-
 -- Dap
 autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    hl(0, "DapBreakpoint", { fg = "#fb4934", bg = "NONE" })
+    hl(0, "DapBreakpoint", { fg = "#fabd2f", bg = "NONE" })
+    hl(0, "DapBreakpointRejected", { fg = "#fb4934", bg = "NONE" })
     hl(0, "DapStopped", { fg = "#b8bb26", bg = "NONE" })
   end,
 })
@@ -53,6 +34,10 @@ autocmd("BufEnter", {
   pattern = "*",
   callback = function()
     fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
+    fn.sign_define(
+      "DapBreakpointRejected",
+      { text = "", texthl = "DapBreakpointRejected" }
+    )
     fn.sign_define("DapStopped", { text = "", texthl = "DapStopped" })
   end,
 })
