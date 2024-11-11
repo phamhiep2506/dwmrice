@@ -20,6 +20,14 @@ autocmd("BufEnter", {
   end,
 })
 
+-- Neotree
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    hl(0, "NeoTreeFloatTitle", { bg = "NONE" })
+  end,
+})
+
 -- Dap
 autocmd("BufEnter", {
   pattern = "*",
