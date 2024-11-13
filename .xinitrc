@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 dunst &
-picom &
+/usr/local/bin/picom &
 redshift -l 21.033333:105.849998 &
 fcitx5 &
 ~/.fehbg &
-batteryd &
+/usr/local/bin/batteryd &
 pkill -f /usr/local/bin/bar
-bar &
+/usr/local/bin/bar &
 dwm

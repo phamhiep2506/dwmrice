@@ -161,7 +161,13 @@ install_pkg redshift
 install_pkg xclip
 
 # picom
-install_pkg picom
+install_pkg libgl libev pcre2 libx11 xcb-util-renderutil libxcb libepoxy xcb-util-image libxext pixman libconfig libdbus hicolor-icon-theme
+install_pkg git mesa meson asciidoc uthash xorgproto
+git clone https://github.com/FT-Labs/picom $PWD/picom-git --depth 1
+(cd picom-git && meson setup --buildtype=release build && ninja -C build install)
+rm_config $PWD/picom-git
+rm_config $HOME/.config/picom
+ln_config $PWD/picom $HOME/.config
 
 # gtk/icon
 install_pkg materia-gtk-theme
