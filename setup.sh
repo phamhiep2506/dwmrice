@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # install packages
-install_pkg() {
+install() {
   sudo pacman -S $1 --noconfirm
 }
 
-# remove config
-rm_config() {
+# remove file|folder
+remove() {
   rm -rf $1
 }
 
 # link config
-ln_config() {
+link() {
   ln -s $1 $2
 }
 
@@ -19,59 +19,59 @@ ln_config() {
 sudo pacman -Syu --noconfirm
 
 # git
-install_pkg git
+install git
 
 # wget
-install_pkg wget
+install wget
 
 # curl
-install_pkg curl
+install curl
 
 # archive
-install_pkg tar
-install_pkg unzip
+install tar
+install unzip
 
 # create folder config
 mkdir -p $HOME/.config
 
 # xinit
-install_pkg xorg
-install_pkg xorg-xinit
-install_pkg xorg-xsetroot
-ln_config $PWD/.xinitrc $HOME
+install xorg
+install xorg-xinit
+install xorg-xsetroot
+link $PWD/.xinitrc $HOME
 
 # dwm
 (cd $PWD/dwm && sudo make clean install)
 
 # dmenu
-install_pkg dmenu
+install dmenu
 
 # install scripts
-sudo rm -rf /usr/local/bin/volume
-sudo rm -rf /usr/local/bin/batteryd
-sudo rm -rf /usr/local/bin/brightness
-sudo rm -rf /usr/local/bin/screenshot
-sudo rm -rf /usr/local/bin/netspeed
-sudo rm -rf /usr/local/bin/cpu
-sudo rm -rf /usr/local/bin/ram
-sudo rm -rf /usr/local/bin/battery
-sudo rm -rf /usr/local/bin/bar
+sudo remove /usr/local/bin/volume
+sudo remove /usr/local/bin/batteryd
+sudo remove /usr/local/bin/brightness
+sudo remove /usr/local/bin/screenshot
+sudo remove /usr/local/bin/netspeed
+sudo remove /usr/local/bin/cpu
+sudo remove /usr/local/bin/ram
+sudo remove /usr/local/bin/battery
+sudo remove /usr/local/bin/bar
 
-sudo ln -s $PWD/scripts/volume /usr/local/bin
-sudo ln -s $PWD/scripts/batteryd /usr/local/bin
-sudo ln -s $PWD/scripts/brightness /usr/local/bin
-sudo ln -s $PWD/scripts/screenshot /usr/local/bin
-sudo ln -s $PWD/scripts/netspeed /usr/local/bin
-sudo ln -s $PWD/scripts/cpu /usr/local/bin
-sudo ln -s $PWD/scripts/ram /usr/local/bin
-sudo ln -s $PWD/scripts/battery /usr/local/bin
-sudo ln -s $PWD/scripts/bar /usr/local/bin
+sudo link $PWD/scripts/volume /usr/local/bin
+sudo link $PWD/scripts/batteryd /usr/local/bin
+sudo link $PWD/scripts/brightness /usr/local/bin
+sudo link $PWD/scripts/screenshot /usr/local/bin
+sudo link $PWD/scripts/netspeed /usr/local/bin
+sudo link $PWD/scripts/cpu /usr/local/bin
+sudo link $PWD/scripts/ram /usr/local/bin
+sudo link $PWD/scripts/battery /usr/local/bin
+sudo link $PWD/scripts/bar /usr/local/bin
 
 # wallpaper
-install_pkg feh
+install feh
 
 # lockscreen
-install_pkg slock
+install slock
 sudo tee /etc/systemd/system/slock@.service << EOF
 [Unit]
 Description=Lock X session using slock for user %i
@@ -89,13 +89,13 @@ EOF
 sudo systemctl enable slock@$USER.service
 
 # ly
-install_pkg ly
+install ly
 sudo systemctl enable ly.service
 
 # fcitx5
-install_pkg fcitx5
-install_pkg fcitx5-im
-install_pkg fcitx5-unikey
+install fcitx5
+install fcitx5-im
+install fcitx5-unikey
 
 # fix env
 sudo tee /etc/environment << EOF
@@ -117,61 +117,61 @@ EndSection
 EOF
 
 # font
-install_pkg ttf-dejavu
-install_pkg ttf-jetbrains-mono
-install_pkg ttf-jetbrains-mono-nerd
-install_pkg noto-fonts-cjk
-install_pkg noto-fonts-emoji
+install ttf-dejavu
+install ttf-jetbrains-mono
+install ttf-jetbrains-mono-nerd
+install noto-fonts-cjk
+install noto-fonts-emoji
 
 # terminal
-install_pkg alacritty
-rm_config $HOME/.config/alacritty
-ln_config $PWD/alacritty $HOME/.config
+install alacritty
+remove $HOME/.config/alacritty
+link $PWD/alacritty $HOME/.config
 
 # tmux
-install_pkg tmux
-rm_config $HOME/.config/tmux
-ln_config $PWD/tmux $HOME/.config
+install tmux
+remove $HOME/.config/tmux
+link $PWD/tmux $HOME/.config
 
 # nvim
-install_pkg nvim
-install_pkg ripgrep
-rm_config $HOME/.config/nvim
-ln_config $PWD/nvim $HOME/.config
+install nvim
+install ripgrep
+remove $HOME/.config/nvim
+link $PWD/nvim $HOME/.config
 
 # dunst
-install_pkg dunst
-install_pkg libnotify
-rm_config $HOME/.config/dunst
-ln_config $PWD/dunst $HOME/.config
+install dunst
+install libnotify
+remove $HOME/.config/dunst
+link $PWD/dunst $HOME/.config
 
 # ranger
-install_pkg ranger
-install_pkg python-pillow
-install_pkg ueberzug
-rm_config $HOME/.config/ranger
-ln_config $PWD/ranger $HOME/.config
-rm_config $HOME/.config/ranger/plugins/ranger_devicons
+install ranger
+install python-pillow
+install ueberzug
+remove $HOME/.config/ranger
+link $PWD/ranger $HOME/.config
+remove $HOME/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
 # redshift
-install_pkg redshift
+install redshift
 
 # clipboard
-install_pkg xclip
+install xclip
 
 # picom
-install_pkg libgl libev pcre2 libx11 xcb-util-renderutil libxcb libepoxy xcb-util-image libxext pixman libconfig libdbus hicolor-icon-theme
-install_pkg git mesa meson asciidoc uthash xorgproto
+install libgl libev pcre2 libx11 xcb-util-renderutil libxcb libepoxy xcb-util-image libxext pixman libconfig libdbus hicolor-icon-theme
+install git mesa meson asciidoc uthash xorgproto
 git clone https://github.com/FT-Labs/picom $PWD/picom-git --depth 1
 (cd picom-git && meson setup --buildtype=release build && ninja -C build install)
-rm_config $PWD/picom-git
-rm_config $HOME/.config/picom
-ln_config $PWD/picom $HOME/.config
+remove $PWD/picom-git
+remove $HOME/.config/picom
+link $PWD/picom $HOME/.config
 
 # gtk/icon
-install_pkg materia-gtk-theme
-install_pkg papirus-icon-theme
+install materia-gtk-theme
+install papirus-icon-theme
 tee $HOME/.gtkrc-2.0 << EOF
 gtk-theme-name="Materia-dark"
 gtk-icon-theme-name="Papirus-Dark"
@@ -190,45 +190,50 @@ sudo tee /usr/share/icons/default/index.theme << EOF
 [Icon Theme]
 Inherits=Bibata-Modern-Classic
 EOF
-rm -rf Bibata-Modern-Classic.tar.xz
+remove $PWD/Bibata-Modern-Classic.tar.xz
 
 # volume
-install_pkg pavucontrol
-install_pkg pamixer
+install pavucontrol
+install pamixer
 
 # backlight
-install_pkg brightnessctl
+install brightnessctl
 
 # mpv
-install_pkg mpv
+install mpv
 
 # viewnior
-install_pkg viewnior
+install viewnior
 
 # screenshot
-install_pkg flameshot
+install flameshot
 
 # zsh
-install_pkg starship
-install_pkg zsh
-install_pkg lsd
+install starship
+install zsh
+install lsd
 mkdir -p $HOME/.zsh/plugins
-rm_config $HOME/.zsh/plugins/zsh-autosuggestions
-rm_config $HOME/.zsh/plugins/zsh-syntax-highlighting
-rm_config $HOME/.zsh/plugins/zsh-vi-mode
-rm_config $HOME/.zshrc
+remove $HOME/.zsh/plugins/zsh-autosuggestions
+remove $HOME/.zsh/plugins/zsh-syntax-highlighting
+remove $HOME/.zsh/plugins/zsh-vi-mode
+remove $HOME/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zsh-autosuggestions --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mode --depth 1
-ln_config $PWD/zsh/.zshrc $HOME
-ln_config $PWD/zsh/starship.toml $HOME/.config
+link $PWD/zsh/.zshrc $HOME
+link $PWD/zsh/starship.toml $HOME/.config
 
 # reboot
-read -p "Reboot now? (Y/n) " yn
-case $yn in
-  y)
-    sudo systemctl reboot
-    ;;
-  n)
-    ;;
-esac
+while true; do
+  read -p "Reboot now? (Y/n) " yn
+  case $yn in
+    y|Y )
+      sudo systemctl reboot
+      ;;
+    n|N )
+      exit
+      ;;
+    * )
+      ;;
+  esac
+done

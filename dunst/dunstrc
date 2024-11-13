@@ -2,7 +2,7 @@
   frame_width = 1
   font = JetBrains Mono 9
   corner_radius = 10
-  offset = 20x50
+  offset = 20x40
   gap_size = 5
   icon_theme = Papirus
   enable_recursive_icon_lookup = true
