@@ -224,7 +224,7 @@ ln_config $PWD/zsh/.zshrc $HOME
 ln_config $PWD/zsh/starship.toml $HOME/.config
 
 # reboot
-read -p "Reboot now? (y/n) " yn
+read -p "Reboot now? (Y/n) " yn
 case $yn in
   y)
     sudo systemctl reboot
