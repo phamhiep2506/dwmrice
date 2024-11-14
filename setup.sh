@@ -217,6 +217,7 @@ git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mo
 link_config $PWD/zsh/.zshrc $HOME
 remove_file $HOME/.config/starship.toml
 link_config $PWD/zsh/starship.toml $HOME/.config
+chsh -s /bin/zsh
 
 # reboot
 while true; do
