@@ -10,18 +10,18 @@
 
 [urgency_low]
   background = "#000000"
-  foreground = "#dbebb2"
-  frame_color = "#d79921"
-  highlight = "#d79921"
+  foreground = "#ebdbb2"
+  frame_color = "#fabd2f"
+  highlight = "#fabd2f"
 
 [urgency_normal]
   background = "#000000"
-  foreground = "#dbebb2"
-  frame_color = "#d79921"
-  highlight = "#d79921"
+  foreground = "#ebdbb2"
+  frame_color = "#fabd2f"
+  highlight = "#fabd2f"
 
 [urgency_critical]
   background = "#000000"
-  foreground = "#dbebb2"
-  frame_color = "#cc241d"
-  highlight = "#d79921"
+  foreground = "#ebdbb2"
+  frame_color = "#fb4934"
+  highlight = "#fabd2f"
