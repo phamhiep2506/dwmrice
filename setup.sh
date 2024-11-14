@@ -162,6 +162,8 @@ install_pkg xclip
 
 # picom
 install_pkg picom
+remove_file $HOME/.config/picom
+link_config $PWD/picom $HOME/.config
 
 # gtk/icon
 install_pkg materia-gtk-theme
