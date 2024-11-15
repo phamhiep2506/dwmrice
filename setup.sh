@@ -134,7 +134,7 @@ remove_file $HOME/.config/tmux
 link_config $PWD/tmux $HOME/.config
 
 # nvim
-install_pkg nvim
+install_pkg neovim
 install_pkg ripgrep
 remove_file $HOME/.config/nvim
 link_config $PWD/nvim $HOME/.config
