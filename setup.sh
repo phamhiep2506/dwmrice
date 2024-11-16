@@ -70,7 +70,11 @@ remove_file $HOME/.config/tmux
 link_config $PWD/tmux $HOME/.config
 
 # nvim
-install_pkg neovim
+wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -O $PWD/nvim-linux64.tar.gz
+tar -xvf $PWD/nvim-linux64.tar.gz
+sudo mv $PWD/nvim-linux64 /opt
+sudo mv /opt/nvim-linux64 /opt/nvim
+remove_file $PWD/nvim-linux64.tar.gz
 install_pkg ripgrep
 remove_file $HOME/.config/nvim
 link_config $PWD/nvim $HOME/.config
@@ -127,13 +131,13 @@ chsh -s $(which zsh)
 
 # reboot
 while true; do
-  read -p "Reboot now? (Y/n) " yn
+  read -p "Reboot now? (y/n) " yn
   case $yn in
     y|Y )
       sudo systemctl reboot
       ;;
     n|N )
-      exit
+      exit 0
       ;;
     * )
       ;;
