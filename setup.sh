@@ -2,7 +2,7 @@
 
 # install packages
 install_pkg() {
-  sudo pacman -S $1 --noconfirm
+  sudo apt install -y $1
 }
 
 # remove file|folder
@@ -16,7 +16,7 @@ link_config() {
 }
 
 # update
-sudo pacman -Syu --noconfirm
+sudo apt update
 
 # git
 install_pkg git
@@ -29,99 +29,35 @@ install_pkg curl
 
 # archive
 install_pkg tar
-install_pkg unzip
 
 # create folder config
 mkdir -p $HOME/.config
 
-# xinit
-install_pkg xorg
-install_pkg xorg-xinit
-install_pkg xorg-xsetroot
-link_config $PWD/.xinitrc $HOME
-
-# dwm
-(cd $PWD/dwm && sudo make clean install)
-
-# dmenu
-install_pkg dmenu
-
-# install scripts
-sudo rm -rf /usr/local/bin/volume
-sudo rm -rf /usr/local/bin/batteryd
-sudo rm -rf /usr/local/bin/brightness
-sudo rm -rf /usr/local/bin/screenshot
-sudo rm -rf /usr/local/bin/netspeed
-sudo rm -rf /usr/local/bin/cpu
-sudo rm -rf /usr/local/bin/ram
-sudo rm -rf /usr/local/bin/battery
-sudo rm -rf /usr/local/bin/bar
-
-sudo ln -s $PWD/scripts/volume /usr/local/bin
-sudo ln -s $PWD/scripts/batteryd /usr/local/bin
-sudo ln -s $PWD/scripts/brightness /usr/local/bin
-sudo ln -s $PWD/scripts/screenshot /usr/local/bin
-sudo ln -s $PWD/scripts/netspeed /usr/local/bin
-sudo ln -s $PWD/scripts/cpu /usr/local/bin
-sudo ln -s $PWD/scripts/ram /usr/local/bin
-sudo ln -s $PWD/scripts/battery /usr/local/bin
-sudo ln -s $PWD/scripts/bar /usr/local/bin
-
-# wallpaper
-install_pkg feh
-
-# lockscreen
-install_pkg slock
-sudo tee /etc/systemd/system/slock@.service << EOF
-[Unit]
-Description=Lock X session using slock for user %i
-Before=sleep.target
-
-[Service]
-User=%i
-Environment=DISPLAY=:0
-ExecStartPre=/usr/bin/xset dpms force suspend
-ExecStart=/usr/bin/slock
-
-[Install]
-WantedBy=sleep.target
-EOF
-sudo systemctl enable slock@$USER.service
-
-# ly
-install_pkg ly
-sudo systemctl enable ly.service
-
 # fcitx5
 install_pkg fcitx5
-install_pkg fcitx5-im
 install_pkg fcitx5-unikey
-
-# fix env
-sudo tee /etc/environment << EOF
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-EOF
-
-# touchpad
-sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf << EOF
-Section "InputClass"
-    Identifier "touchpad"
-    Driver "libinput"
-    MatchIsTouchpad "on"
-    Option "Tapping" "on"
-    Option "TappingButtonMap" "lmr"
-    Option "NaturalScrolling" "true"
-EndSection
+mkdir -p $HOME/.config/autostart
+tee $HOME/.config/autostart/fcitx5.desktop << EOF
+[Desktop Entry]
+Type=Application
+Name=fcitx5
+Exec=/usr/bin/fcitx5
 EOF
 
 # font
-install_pkg ttf-dejavu
-install_pkg ttf-jetbrains-mono
-install_pkg ttf-jetbrains-mono-nerd
-install_pkg noto-fonts-cjk
-install_pkg noto-fonts-emoji
+install_pkg fonts-jetbrains-mono
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz -O $PWD/JetBrainsMono.tar.xz
+sudo mkdir -p /usr/local/share/fonts/JetBrainsMonoNF
+sudo tar -xvf $PWD/JetBrainsMono.tar.xz -C /usr/local/share/fonts/JetBrainsMonoNF
+remove_file $PWD/JetBrainsMono.tar.xz
+fc-cache
+
+# cursor
+wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz -O $PWD/Bibata-Modern-Classic.tar.xz
+sudo tar -xvf $PWD/Bibata-Modern-Classic.tar.xz -C /usr/share/icons
+remove_file $PWD/Bibata-Modern-Classic.tar.xz
+gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Classic"
+gsettings set org.gnome.desktop.interface cursor-size 20
 
 # terminal
 install_pkg alacritty
@@ -139,61 +75,15 @@ install_pkg ripgrep
 remove_file $HOME/.config/nvim
 link_config $PWD/nvim $HOME/.config
 
-# dunst
-install_pkg dunst
-install_pkg libnotify
-remove_file $HOME/.config/dunst
-link_config $PWD/dunst $HOME/.config
-
 # ranger
 install_pkg ranger
-install_pkg python-pillow
-install_pkg ueberzug
 remove_file $HOME/.config/ranger
 link_config $PWD/ranger $HOME/.config
 remove_file $HOME/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons --depth 1
 
-# redshift
-install_pkg redshift
-
 # clipboard
 install_pkg xclip
-
-# picom
-install_pkg picom
-remove_file $HOME/.config/picom
-link_config $PWD/picom $HOME/.config
-
-# gtk/icon
-install_pkg materia-gtk-theme
-install_pkg papirus-icon-theme
-tee $HOME/.gtkrc-2.0 << EOF
-gtk-theme-name="Materia-dark"
-gtk-icon-theme-name="Papirus-Dark"
-EOF
-mkdir -p $HOME/.config/gtk-3.0
-tee $HOME/.config/gtk-3.0/settings.ini << EOF
-[Settings]
-gtk-theme-name=Materia-dark
-gtk-icon-theme-name=Papirus-Dark
-EOF
-
-# cursor
-wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz
-sudo tar xvf Bibata-Modern-Classic.tar.xz -C /usr/share/icons
-sudo tee /usr/share/icons/default/index.theme << EOF
-[Icon Theme]
-Inherits=Bibata-Modern-Classic
-EOF
-remove_file $PWD/Bibata-Modern-Classic.tar.xz
-
-# volume
-install_pkg pavucontrol
-install_pkg pamixer
-
-# backlight
-install_pkg brightnessctl
 
 # mpv
 install_pkg mpv
@@ -201,13 +91,27 @@ install_pkg mpv
 # viewnior
 install_pkg viewnior
 
-# screenshot
-install_pkg flameshot
+# gnome
+gnome-extensions disable ubuntu-dock@ubuntu.com
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+for i in {1..9}
+do
+  gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"
+done
+for i in {1..9}
+do
+  gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"
+done
+for i in {1..9}
+do
+  gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Shift><Super>$i']"
+done
 
 # zsh
 install_pkg zsh
 install_pkg lsd
-install_pkg starship
+curl -sS https://starship.rs/install.sh | sh
 mkdir -p $HOME/.zsh/plugins
 remove_file $HOME/.zsh/plugins/zsh-autosuggestions
 remove_file $HOME/.zsh/plugins/zsh-syntax-highlighting
@@ -219,7 +123,7 @@ git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mo
 link_config $PWD/zsh/.zshrc $HOME
 remove_file $HOME/.config/starship.toml
 link_config $PWD/zsh/starship.toml $HOME/.config
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 
 # reboot
 while true; do

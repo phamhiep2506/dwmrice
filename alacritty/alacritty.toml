@@ -1,19 +1,16 @@
-[general]
 live_config_reload = true
 
 [window]
-opacity = 0.85
 dynamic_padding = true
+opacity = 0.9
+decorations = "None"
 
 [font]
 normal = { family = "JetBrains Mono", style = "Regular" }
 bold = { family = "JetBrains Mono", style = "Bold" }
 italic = { family = "JetBrains Mono", style = "Italic" }
 bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
-size = 11
-
-[mouse]
-hide_when_typing = true
+size = 12
 
 [colors.primary]
 background = "#000000"

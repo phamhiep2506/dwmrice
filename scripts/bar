@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-while true; do
-  xsetroot -name "$(netspeed)|CPU $(cpu)|RAM $(ram)|VOL $(volume --get)|BN $(brightness --get)|BAT $(battery)|$(date +'%H:%M')" > /dev/null 2>&1
-  if [ $? -ne 0 ]; then
-    exit 1
-  fi
-  sleep 0.5
-done

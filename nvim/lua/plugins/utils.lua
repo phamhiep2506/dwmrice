@@ -6,4 +6,5 @@ return {
   "tpope/vim-sleuth",
   "moll/vim-bbye",
   "ntpeters/vim-better-whitespace",
+  "sbdchd/neoformat",
 }

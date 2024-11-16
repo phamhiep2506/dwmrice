@@ -67,8 +67,5 @@ autocmd("LspAttach", {
     map("n", "<leader>sh", lsp.signature_help, opts)
     map("n", "<leader>ca", lsp.code_action, opts)
     map("n", "<leader>rn", lsp.rename, opts)
-    map("n", "<leader>fm", function()
-      require("conform").format({ bufnr = args.buf })
-    end, opts)
   end,
 })
