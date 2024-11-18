@@ -30,10 +30,6 @@ require("config.autocmds")
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- import your plugins
     { import = "plugins" },
-  },
-  ui = {
-    border = "rounded",
   },
 })

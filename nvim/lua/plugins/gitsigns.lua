@@ -1,19 +1,14 @@
 return {
   "lewis6991/gitsigns.nvim",
+  event = "VeryLazy",
+  keys = {
+    { "]g", "<CMD>Gitsigns next_hunk<CR>", desc = "Next hunk" },
+    { "[g", "<CMD>Gitsigns prev_hunk<CR>", desc = "Previous hunk" },
+    { "<leader>gp", "<CMD>Gitsigns preview_hunk<CR>", desc = "Preview hunk" },
+    { "<leader>gd", "<CMD>Gitsigns diffthis<CR>", desc = "Show diff" },
+    { "<leader>gd", "<CMD>Gitsigns diffthis<CR>", desc = "Show blame line" },
+  },
   config = function()
-    local gitsigns = require('gitsigns')
-
-    gitsigns.setup({
-      preview_config = {
-        border = "rounded",
-      },
-    })
-
-    local map = vim.keymap.set
-    map("n", "]g", gitsigns.next_hunk)
-    map("n", "[g", gitsigns.prev_hunk)
-    map("n", "<leader>gp", gitsigns.preview_hunk)
-    map("n", "<leader>gd", gitsigns.diffthis)
-    map("n", "<leader>gb", gitsigns.blame_line)
+    require("gitsigns").setup()
   end,
 }

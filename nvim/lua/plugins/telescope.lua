@@ -1,20 +1,19 @@
 return {
   "nvim-telescope/telescope.nvim",
+  cmd = "Telescope",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = function()
-    require("telescope").setup({
-      defaults = {
-        prompt_prefix = "󰭎 ",
-        selection_caret = " ",
-      },
-    })
-
-    local map = vim.keymap.set
-    map("n", "<leader>ff", "<CMD>Telescope find_files<CR>")
-    map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>")
-    map("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
-    map("n", "<leader>fc", "<CMD>Telescope commands<CR>")
-  end,
+  keys = {
+    { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Find files" },
+    { "<leader>fg", "<CMD>Telescope live_grep<CR>", desc = "Find texts" },
+    { "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "Find buffers" },
+    { "<leader>fc", "<CMD>Telescope commands<CR>", desc = "Find commands" },
+  },
+  opts = {
+    defaults = {
+      prompt_prefix = "󰭎 ",
+      selection_caret = " ",
+    },
+  },
 }

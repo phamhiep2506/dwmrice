@@ -6,25 +6,7 @@ local fn = vim.fn
 autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    hl(0, "CursorLine", { fg = "NONE", bg = "NONE" })
     hl(0, "CursorLineNR", { fg = "#fabd2f", bg = "NONE", bold = true })
-  end,
-})
-
--- Float
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    hl(0, "NormalFloat", { bg = "NONE" })
-    hl(0, "FloatBorder", { bg = "NONE" })
-  end,
-})
-
--- Neotree
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    hl(0, "NeoTreeFloatTitle", { bg = "NONE" })
   end,
 })
 
@@ -35,12 +17,7 @@ autocmd("BufEnter", {
     hl(0, "DapBreakpoint", { fg = "#fabd2f", bg = "NONE" })
     hl(0, "DapBreakpointRejected", { fg = "#fb4934", bg = "NONE" })
     hl(0, "DapStopped", { fg = "#b8bb26", bg = "NONE" })
-  end,
-})
 
-autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
     fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint" })
     fn.sign_define(
       "DapBreakpointRejected",

@@ -1,5 +1,4 @@
 local o = vim.opt
-local g = vim.g
 
 -- Base
 o.number = true
@@ -34,4 +33,4 @@ o.shiftwidth = 2
 o.undofile = true
 
 -- Map leader <Space>
-g.mapleader = " "
+vim.g.mapleader = " "

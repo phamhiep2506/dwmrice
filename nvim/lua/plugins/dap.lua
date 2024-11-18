@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
+  event = "VeryLazy",
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/nvim-nio",
@@ -11,14 +12,8 @@ return {
     local vscode = require("dap.ext.vscode")
     local json = require("plenary.json")
 
-    dapui.setup({
-      controls = {
-        enabled = false,
-      },
-      floating = {
-        border = "rounded",
-      },
-    })
+    -- Setup dap ui
+    dapui.setup()
 
     -- Auto open & close dapui
     dap.listeners.before.attach.dapui_config = function()
@@ -51,6 +46,7 @@ return {
       vscode.load_launchjs()
     end
 
+    -- Keymap
     local map = vim.keymap.set
     map("n", "<leader>dc", dap.continue)
     map("n", "<leader>db", dap.toggle_breakpoint)

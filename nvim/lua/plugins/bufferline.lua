@@ -1,25 +1,24 @@
 return {
   "akinsho/bufferline.nvim",
+  event = "VeryLazy",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  config = function()
-    require("bufferline").setup({
-      options = {
-        offsets = {
-          {
-            filetype = "neo-tree",
-            text = "File Explorer",
-            text_align = "center",
-            separator = true,
-          },
+  keys = {
+    { "<A-.>", "<CMD>bnext<CR>", desc = "Next buffer" },
+    { "<A-,>", "<CMD>bprevious<CR>", desc = "Previous buffer" },
+    { "<A-c>", "<CMD>Bdelete<CR>", desc = "Delete buffer" },
+  },
+  opts = {
+    options = {
+      offsets = {
+        {
+          filetype = "neo-tree",
+          text = "File Explorer",
+          text_align = "center",
+          separator = true,
         },
       },
-    })
-
-    local map = vim.keymap.set
-    map("n", "<A-.>", "<CMD>bnext<CR>")
-    map("n", "<A-,>", "<CMD>bprevious<CR>")
-    map("n", "<A-c>", "<CMD>Bdelete<CR>")
-  end,
+    },
+  },
 }

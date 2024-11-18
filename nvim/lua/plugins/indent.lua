@@ -1,13 +1,15 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  config = function()
-    require("ibl").setup({
-      indent = {
-        char = "▏",
-      },
-      scope = {
-        enabled = false,
-      },
-    })
+  event = "VeryLazy",
+  opts = {
+    indent = {
+      char = "▏",
+    },
+    scope = {
+      enabled = false,
+    },
+  },
+  config = function(_, opts)
+    require("ibl").setup(opts)
   end,
 }

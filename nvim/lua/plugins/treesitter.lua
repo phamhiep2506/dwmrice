@@ -1,12 +1,14 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  tag = "v0.9.3",
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-    })
-  end,
+  event = "VeryLazy",
+  version = "0.9.3",
+  opts = {
+    auto_install = true,
+    highlight = {
+      enable = true,
+    },
+  },
+  config = function (_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end
 }
