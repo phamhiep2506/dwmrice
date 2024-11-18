@@ -10,10 +10,4 @@ return {
     { "<leader>fb", "<CMD>Telescope buffers<CR>", desc = "Find buffers" },
     { "<leader>fc", "<CMD>Telescope commands<CR>", desc = "Find commands" },
   },
-  opts = {
-    defaults = {
-      prompt_prefix = "󰭎 ",
-      selection_caret = " ",
-    },
-  },
 }

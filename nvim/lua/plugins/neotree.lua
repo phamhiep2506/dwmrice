@@ -13,6 +13,5 @@ return {
     filesystem = {
       follow_current_file = { enabled = true },
     },
-    enable_diagnostics = false,
   },
 }

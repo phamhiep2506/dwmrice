@@ -2,10 +2,6 @@ live_config_reload = true
 
 [window]
 dynamic_padding = true
-decorations = "None"
-
-[mouse]
-hide_when_typing = true
 
 [font]
 normal = { family = "JetBrains Mono", style = "Regular" }
