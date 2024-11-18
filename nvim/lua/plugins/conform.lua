@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  tag = "v7.1.0",
   config = function()
     require("conform").setup({
       default_format_opts = {

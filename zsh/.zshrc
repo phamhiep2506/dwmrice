@@ -14,7 +14,6 @@ export DOTNET_ROOT=/opt/dotnet
 export ANDROID_HOME=/opt/sdk
 export JAVA_HOME=/opt/jdk
 export PATH=$HOME/.local/bin:$PATH
-export PATH=/opt/nvim/bin:$PATH
 export PATH=/opt/jdk/bin:$PATH
 export PATH=/opt/node/bin:$PATH
 export PATH=/opt/docker:$PATH
