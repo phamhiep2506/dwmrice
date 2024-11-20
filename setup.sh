@@ -66,8 +66,8 @@ link_config $PWD/alacritty $HOME/.config
 
 # tmux
 install_pkg tmux
-remove_file $HOME/.config/tmux
-link_config $PWD/tmux $HOME/.config
+remove_file $HOME/.tmux.conf
+link_config $PWD/tmux/.tmux.conf $HOME
 
 # nvim
 install_pkg neovim
