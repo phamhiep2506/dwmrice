@@ -4,7 +4,6 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension csharpier.csharpier-vscode
 code --install-extension editorconfig.editorconfig
 code --install-extension esbenp.prettier-vscode
-code --install-extension humao.rest-client
 code --install-extension jdinhlife.gruvbox
 code --install-extension kylinideteam.cmake-intellisence
 code --install-extension ms-dotnettools.csdevkit

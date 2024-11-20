@@ -42,6 +42,7 @@
   "editor.lineNumbers": "relative",
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
+    // Find
     {
       "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
@@ -58,6 +59,7 @@
       "before": ["<leader>", "f", "b"],
       "commands": ["workbench.action.showEditorsInActiveGroup"]
     },
+    // Jump
     {
       "before": ["j"],
       "after": ["j", "z", "z"]
@@ -74,6 +76,7 @@
       "before": ["K"],
       "after": ["5", "k", "z", "z"]
     },
+    // Next/Previous word
     {
       "before": ["n"],
       "after": ["n", "z", "z"]
@@ -82,6 +85,7 @@
       "before": ["N"],
       "after": ["N", "z", "z"]
     },
+    // Split
     {
       "before": ["<leader>", "_"],
       "commands": [":split"]
@@ -90,14 +94,17 @@
       "before": ["<leader>", "|"],
       "commands": [":vsplit"]
     },
+    // Paste
     {
       "before": ["<leader>", "p"],
       "after": ["\"", "+", "p"]
     },
+    // Disable highlight
     {
       "before": ["<leader>", "Enter"],
       "commands": [":nohlsearch"]
     },
+    // Lsp
     {
       "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"]
@@ -128,6 +135,7 @@
     }
   ],
   "vim.visualModeKeyBindings": [
+    // Copy & patse
     {
       "before": ["<leader>", "p"],
       "after": ["\"", "+", "p"]
@@ -136,6 +144,7 @@
       "before": ["<leader>", "y"],
       "after": ["\"", "+", "y"]
     },
+    // Indent
     {
       "before": [">"],
       "after": [">", "g", "v"]
