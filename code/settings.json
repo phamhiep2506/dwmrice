@@ -48,6 +48,10 @@
       "commands": ["workbench.action.quickOpen"]
     },
     {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.action.showEditorsInActiveGroup"]
+    },
+    {
       "before": ["<leader>", "f", "c"],
       "commands": ["workbench.action.showCommands"]
     },
@@ -56,8 +60,8 @@
       "commands": ["workbench.action.gotoSymbol"]
     },
     {
-      "before": ["<leader>", "f", "b"],
-      "commands": ["workbench.action.showEditorsInActiveGroup"]
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.quickTextSearch"]
     },
     // Jump
     {
