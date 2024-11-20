@@ -83,5 +83,21 @@
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
+  },
+  // Tab
+  {
+    "key": "alt+.",
+    "command": "workbench.action.nextEditor",
+    "when": "editorFocus && vim.active"
+  },
+  {
+    "key": "alt+,",
+    "command": "workbench.action.previousEditor",
+    "when": "editorFocus && vim.active"
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorFocus && vim.active"
   }
 ]
