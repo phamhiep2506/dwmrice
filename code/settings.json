@@ -56,10 +56,6 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "f", "s"],
-      "commands": ["workbench.action.gotoSymbol"]
-    },
-    {
       "before": ["<leader>", "f", "g"],
       "commands": ["workbench.action.quickTextSearch"]
     },
