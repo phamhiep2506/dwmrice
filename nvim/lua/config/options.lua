@@ -15,6 +15,7 @@ o.swapfile = false
 o.updatetime = 300
 o.hidden = true
 o.laststatus = 3
+o.guifont = "JetBrainsMono Nerd Font:h12"
 
 -- Search
 o.hlsearch = true

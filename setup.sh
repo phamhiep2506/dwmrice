@@ -70,7 +70,11 @@ remove_file $HOME/.tmux.conf
 link_config $PWD/tmux/.tmux.conf $HOME
 
 # nvim
-install_pkg neovim
+wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -O $PWD/nvim-linux64.tar.gz
+tar -xvf $PWD/nvim-linux64.tar.gz
+sudo mv $PWD/nvim-linux64 /opt
+sudo mv /opt/nvim-linux64 /opt/nvim
+remove_file $PWD/nvim-linux64.tar.gz
 install_pkg ripgrep
 remove_file $HOME/.config/nvim
 link_config $PWD/nvim $HOME/.config
