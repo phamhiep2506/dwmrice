@@ -13,5 +13,6 @@ return {
     filesystem = {
       follow_current_file = { enabled = true },
     },
+    popup_border_style = "rounded",
   },
 }
