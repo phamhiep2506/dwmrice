@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  version = "0.9.3",
   event = "VeryLazy",
   opts = {
     auto_install = true,
