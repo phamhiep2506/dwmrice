@@ -6,7 +6,4 @@ return {
       border = "rounded",
     },
   },
-  config = function(_, opts)
-    require("gitsigns").setup(opts)
-  end,
 }

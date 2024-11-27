@@ -60,14 +60,14 @@ gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Classic"
 gsettings set org.gnome.desktop.interface cursor-size 20
 
 # terminal
-install_pkg alacritty
-remove_file $HOME/.config/alacritty
-link_config $PWD/alacritty $HOME/.config
+install_pkg kitty
+remove_file $HOME/.config/kitty
+link_config $PWD/kitty $HOME/.config
 
 # tmux
 install_pkg tmux
-remove_file $HOME/.tmux.conf
-link_config $PWD/tmux/.tmux.conf $HOME
+remove_file $HOME/.config/tmux
+link_config $PWD/tmux $HOME/.config
 
 # nvim
 install_pkg neovim

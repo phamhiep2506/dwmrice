@@ -6,5 +6,4 @@ return {
   "tpope/vim-sleuth",
   "moll/vim-bbye",
   "ntpeters/vim-better-whitespace",
-  "easymotion/vim-easymotion",
 }
