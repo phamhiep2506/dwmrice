@@ -11,7 +11,9 @@ return {
   },
   opts = {
     filesystem = {
-      follow_current_file = { enabled = true },
+      follow_current_file = {
+        enabled = true,
+      },
     },
     popup_border_style = "rounded",
   },
