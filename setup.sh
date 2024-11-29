@@ -66,6 +66,11 @@ link_config $PWD/kitty $HOME/.config
 
 # tmux
 install_pkg tmux
+mkdir -p $HOME/.tmux/plugins
+remove_file $HOME/.tmux/plugins/tmux-resurrect
+remove_file $HOME/.tmux/plugins/tmux-yank
+git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.tmux/plugins/tmux-resurrect --depth 1
+git clone https://github.com/tmux-plugins/tmux-yank $HOME/.tmux/plugins/tmux-yank --depth 1
 remove_file $HOME/.config/tmux
 link_config $PWD/tmux $HOME/.config
 
