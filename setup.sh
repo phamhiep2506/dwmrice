@@ -36,6 +36,13 @@ mkdir -p $HOME/.config
 # fcitx5
 install_pkg fcitx5
 install_pkg fcitx5-unikey
+if ! $(grep -Fxq "$(echo 'GTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nXMODIFIERS=@im=fcitx')" /etc/environment); then
+sudo tee -a /etc/environment << EOF
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+EOF
+fi
 mkdir -p $HOME/.config/autostart
 tee $HOME/.config/autostart/fcitx5.desktop << EOF
 [Desktop Entry]
@@ -100,16 +107,13 @@ install_pkg viewnior
 gnome-extensions disable ubuntu-dock@ubuntu.com
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
-for i in {1..9}
-do
+for i in {1..9}; do
   gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"
 done
-for i in {1..9}
-do
+for i in {1..9}; do
   gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"
 done
-for i in {1..9}
-do
+for i in {1..9}; do
   gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Shift><Super>$i']"
 done
 
@@ -136,6 +140,7 @@ while true; do
   case $yn in
     y|Y )
       sudo systemctl reboot
+      exit
       ;;
     n|N )
       exit 0
