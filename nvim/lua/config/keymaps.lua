@@ -31,3 +31,6 @@ map("v", "<leader>y", '"+y')
 
 -- Disable highlight search
 map("n", "<leader><Enter>", "<CMD>nohlsearch<CR>")
+
+-- Copy breakpoint
+map("n", "<leader>cb", "<CMD>let @+=expand(\"%\") . ':' . line(\".\")<CR>")
