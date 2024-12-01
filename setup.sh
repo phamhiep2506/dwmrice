@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # install packages
 install_pkg() {
@@ -116,6 +116,37 @@ done
 for i in {1..9}; do
   gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Shift><Super>$i']"
 done
+
+# gnome extensions
+GNOME_SHELL_VERSION=$(gnome-shell --version | awk '{print $3}' | awk -F "." '{print $1}')
+EXTENSIONS=(
+just-perfection-desktop@just-perfection
+blur-my-shell@aunetx
+)
+for EXTENSION in "${EXTENSIONS[@]}"; do
+  VERSION_TAG=$(curl -Lfs "https://extensions.gnome.org/extension-query/?search=$EXTENSION" | jq '.extensions[0]' | jq '.shell_version_map | ."'"$GNOME_SHELL_VERSION"'" | ."pk"')
+  wget https://extensions.gnome.org/download-extension/$EXTENSION.shell-extension.zip?version_tag=$VERSION_TAG -O $PWD/$EXTENSION.zip
+  gnome-extensions install --force $PWD/$EXTENSION.zip
+  rm -rf $PWD/$EXTENSION.zip
+done
+
+# setup extensions
+mkdir -p $HOME/.local/bin
+tee $HOME/.local/bin/setup-extensions << EOF
+#!/usr/bin/env bash
+gnome-extensions enable just-perfection-desktop@just-perfection
+dconf write /org/gnome/shell/extensions/just-perfection/dash false
+dconf write /org/gnome/shell/extensions/just-perfection/workspace-popup false
+dconf write /org/gnome/shell/extensions/just-perfection/workspaces-in-app-grid false
+gnome-extensions enable blur-my-shell@aunetx
+EOF
+chmod +x $HOME/.local/bin/setup-extensions
+tee $HOME/.config/autostart/setup-extensions.desktop << EOF
+[Desktop Entry]
+Type=Application
+Name=setup-extensions
+Exec=$HOME/.local/bin/setup-extensions
+EOF
 
 # zsh
 install_pkg zsh
