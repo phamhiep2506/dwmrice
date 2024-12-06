@@ -27,6 +27,9 @@ install_pkg wget
 # curl
 install_pkg curl
 
+# jq
+install_pkg jq
+
 # archive
 install_pkg tar
 
@@ -151,7 +154,6 @@ EOF
 # zsh
 install_pkg zsh
 install_pkg lsd
-curl -sS https://starship.rs/install.sh | sh
 mkdir -p $HOME/.zsh/plugins
 remove_file $HOME/.zsh/plugins/zsh-autosuggestions
 remove_file $HOME/.zsh/plugins/zsh-syntax-highlighting
@@ -161,8 +163,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/plugins/zs
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.zsh/plugins/zsh-vi-mode --depth 1
 link_config $PWD/zsh/.zshrc $HOME
-remove_file $HOME/.config/starship.toml
-link_config $PWD/zsh/starship.toml $HOME/.config
 chsh -s $(which zsh)
 
 # reboot
