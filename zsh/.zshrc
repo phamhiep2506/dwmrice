@@ -27,7 +27,6 @@ export PATH=/opt/node/bin:$PATH
 export PATH=/opt/docker:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.python/bin:$PATH
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 alias ls="lsd"
 alias vim="nvim"
